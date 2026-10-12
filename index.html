@@ -1,998 +1,1077 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmed Hassan | Data Engineer — Real-Time Pipelines & Lakehouse Architectures</title>
-    <meta name="description" content="Ahmed Hassan is a Data Engineer specializing in real-time CDC pipelines, AI-Native Lakehouse architectures, and end-to-end ETL/ELT workflows using Apache Flink, Spark, Kafka, ClickHouse, and dbt." />
-    <!-- Favicon placeholder using emoji -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmed Hassan | Data Engineer — Real-Time Pipelines & Lakehouse Architectures</title>
+  <meta name="description"
+    content="Ahmed Hassan is a Data Engineer specializing in real-time CDC pipelines, AI-Native Lakehouse architectures, and end-to-end ETL/ELT workflows using Apache Flink, Spark, Kafka, ClickHouse, and dbt." />
+  <!-- Favicon placeholder using emoji -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- ══════════════════════════════════════════════════════
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
          NAVIGATION
     ═══════════════════════════════════════════════════════ -->
-    <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
-      <div class="container">
-        <div class="nav-inner">
-          <!-- Brand -->
-          <a href="#home" class="nav-brand" aria-label="Ahmed Hassan - home">
-            <span class="nav-brand-dot" aria-hidden="true"></span>
-            AHMED HASSAN
-          </a>
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Brand -->
+        <a href="#home" class="nav-brand" aria-label="Ahmed Hassan - home">
+          <span class="nav-brand-dot" aria-hidden="true"></span>
+          AHMED HASSAN
+        </a>
 
-          <!-- Desktop links -->
-          <ul class="nav-links" role="list">
-            <li><a href="#home"           class="nav-link active" id="nav-home">Home</a></li>
-            <li><a href="#about"          class="nav-link"        id="nav-about">About</a></li>
-            <li><a href="#skills"         class="nav-link"        id="nav-skills">Skills</a></li>
-            <li><a href="#projects"       class="nav-link"        id="nav-projects">Projects</a></li>
-            <li><a href="#certifications" class="nav-link"        id="nav-certs">Credentials</a></li>
-            <li><a href="#contact"        class="nav-link"        id="nav-contact">Contact</a></li>
-          </ul>
+        <!-- Desktop links -->
+        <ul class="nav-links" role="list">
+          <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+          <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+          <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+          <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+          <li><a href="#certifications" class="nav-link" id="nav-certs">Credentials</a></li>
+          <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+        </ul>
 
-          <a href="#contact" class="nav-cta" aria-label="Get in touch">Get in Touch</a>
+        <a href="#contact" class="nav-cta" aria-label="Get in touch">Get in Touch</a>
 
-          <!-- Hamburger -->
-          <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-mobile">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </button>
-        </div>
+        <!-- Hamburger -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false"
+          aria-controls="nav-mobile">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
       </div>
-    </nav>
-
-    <!-- Mobile drawer -->
-    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
-      <ul class="nav-mobile-links" role="list">
-        <li><a href="#home"           id="mobile-nav-home">Home</a></li>
-        <li><a href="#about"          id="mobile-nav-about">About</a></li>
-        <li><a href="#skills"         id="mobile-nav-skills">Skills</a></li>
-        <li><a href="#projects"       id="mobile-nav-projects">Projects</a></li>
-        <li><a href="#certifications" id="mobile-nav-certs">Credentials</a></li>
-        <li><a href="#contact"        id="mobile-nav-contact">Contact</a></li>
-      </ul>
     </div>
+  </nav>
 
-    <!-- ══════════════════════════════════════════════════════
+  <!-- Mobile drawer -->
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <ul class="nav-mobile-links" role="list">
+      <li><a href="#home" id="mobile-nav-home">Home</a></li>
+      <li><a href="#about" id="mobile-nav-about">About</a></li>
+      <li><a href="#skills" id="mobile-nav-skills">Skills</a></li>
+      <li><a href="#projects" id="mobile-nav-projects">Projects</a></li>
+      <li><a href="#certifications" id="mobile-nav-certs">Credentials</a></li>
+      <li><a href="#contact" id="mobile-nav-contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
          HERO
     ═══════════════════════════════════════════════════════ -->
-    <section id="home" class="hero">
-      <div class="hero-bg-orbs" aria-hidden="true">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-      </div>
+  <section id="home" class="hero">
+    <div class="hero-bg-orbs" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+    </div>
 
-      <div class="container">
-        <div class="hero-content">
+    <div class="container">
+      <div class="hero-content">
 
-          <!-- Text -->
-          <div class="hero-text">
-            <div class="hero-eyebrow">
-              <span class="hero-status-dot" aria-hidden="true"></span>
-              <span class="hero-status-text">Available for new opportunities</span>
-            </div>
-
-            <h1 class="hero-name gradient-text">Ahmed Hassan</h1>
-
-            <p class="hero-title">
-              <strong>Data Engineer</strong> — Real-Time Pipelines &amp; Lakehouse Systems
-            </p>
-
-            <p class="hero-desc">
-              I design and build the data infrastructure that organizations rely on —
-              real-time CDC pipelines, AI-Native Lakehouse architectures, and scalable
-              ETL/ELT workflows. Currently engineering data systems at Bassirah using
-              Apache Flink, Spark, Kafka, ClickHouse, and dbt.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projects" class="btn-primary" id="hero-cta-projects">
-                <i class="fas fa-layer-group" aria-hidden="true"></i>
-                Explore My Projects
-              </a>
-              <a href="#contact" class="btn-secondary" id="hero-cta-contact">
-                <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                Get in Touch
-              </a>
-            </div>
-
-            <div class="hero-socials">
-              <span class="hero-social-label">Find me on</span>
-              <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer"
-                 class="hero-social-link" id="hero-github" aria-label="GitHub profile">
-                <i class="fab fa-github" aria-hidden="true"></i>
-              </a>
-              <a href="https://www.linkedin.com/in/ahmed-hassan-dataeng/" target="_blank" rel="noopener noreferrer"
-                 class="hero-social-link" id="hero-linkedin" aria-label="LinkedIn profile">
-                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-              </a>
-            </div>
-
-            <!-- Pipeline visual -->
-            <div class="pipeline-mini" aria-label="Data pipeline stages: Ingest, Stream, Transform, Store, Analyze">
-              <span class="pipe-step">Ingest</span>
-              <span class="pipe-arrow" aria-hidden="true">→</span>
-              <span class="pipe-step">Stream</span>
-              <span class="pipe-arrow" aria-hidden="true">→</span>
-              <span class="pipe-step">Transform</span>
-              <span class="pipe-arrow" aria-hidden="true">→</span>
-              <span class="pipe-step">Store</span>
-              <span class="pipe-arrow" aria-hidden="true">→</span>
-              <span class="pipe-step">Analyze</span>
-            </div>
+        <!-- Text -->
+        <div class="hero-text">
+          <div class="hero-eyebrow">
+            <span class="hero-status-dot" aria-hidden="true"></span>
+            <span class="hero-status-text">Available for new opportunities</span>
           </div>
 
-          <!-- Portrait -->
-          <div class="hero-image-wrap" aria-hidden="true">
-            <div class="hero-image-ring"></div>
-            <div class="hero-image-card">
-              <img src="assets/me.jpeg" alt="Ahmed Hassan — Data Engineer" />
-            </div>
+          <h1 class="hero-name gradient-text">Ahmed Hassan</h1>
 
-            <!-- Floating badge: certs -->
-            <div class="hero-badge bottom-left">
-              <div class="hero-badge-icon">
-                <i class="fas fa-certificate" aria-hidden="true"></i>
-              </div>
-              <div class="hero-badge-text">
-                <strong>DP-700 Certified</strong>
-                <span>Microsoft Fabric</span>
-              </div>
-            </div>
-
-            <!-- Floating badge: stack -->
-            <div class="hero-badge top-right">
-              <div class="hero-badge-icon purple">
-                <i class="fas fa-bolt" aria-hidden="true"></i>
-              </div>
-              <div class="hero-badge-text">
-                <strong>Flink · Kafka · Spark</strong>
-                <span>Real-time data stack</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
-        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-      </a>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         ABOUT
-    ═══════════════════════════════════════════════════════ -->
-    <section id="about" class="bg-alt">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">About Me</span>
-          <h2 class="section-heading">Turning Raw Data into Reliable Infrastructure</h2>
-          <span class="divider-line" aria-hidden="true"></span>
-          <p class="section-sub">
-            Data Engineer with hands-on experience building the pipelines, lakes,
-            and platforms that power modern analytics.
+          <p class="hero-title">
+            <strong>Data Engineer</strong>
           </p>
-        </header>
 
-        <div class="about-grid reveal">
-
-          <!-- Portrait + stats -->
-          <div>
-            <div class="about-portrait-frame">
-              <img src="assets/me.jpeg" alt="Ahmed Hassan portrait" />
-            </div>
-            <div class="about-stats" aria-label="Key stats">
-              <div class="about-stat">
-                <span class="about-stat-value">1+</span>
-                <span class="about-stat-label">Years in Data Eng.</span>
-              </div>
-              <div class="about-stat">
-                <span class="about-stat-value">10+</span>
-                <span class="about-stat-label">Data Projects</span>
-              </div>
-              <div class="about-stat">
-                <span class="about-stat-value">6+</span>
-                <span class="about-stat-label">Certifications</span>
-              </div>
-              <div class="about-stat">
-                <span class="about-stat-value">ERC</span>
-                <span class="about-stat-label">Volunteer</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right column -->
-          <div class="about-body">
-            <p>
-              I build data systems that are reliable, observable, and built to scale.
-              My core focus is on real-time change-data-capture pipelines, AI-Native
-              Lakehouse architectures (Bronze → Silver → Gold), and batch ETL/ELT
-              workflows. I'm currently working full-time at Bassirah as a Data Engineer
-              and completing the ITI Data Engineering Program.
-            </p>
-            <p>
-              My background spans data engineering, backend software development, and
-              a degree in Computer &amp; Artificial Intelligence (Medical Informatics),
-              giving me a solid foundation across both data systems and software
-              engineering. I'm certified in Microsoft Fabric (DP-700) and ClickHouse,
-              and hold two AWS Academy credentials in Data Engineering and Cloud Foundations.
-            </p>
-
-            <!-- Experience timeline -->
-            <div class="about-subsection">
-              <p class="about-subsection-title">Professional Experience</p>
-              <ol class="timeline" aria-label="Work experience timeline">
-
-                <li class="timeline-item">
-                  <div class="timeline-dot" aria-hidden="true"></div>
-                  <div class="timeline-role">Data Engineer</div>
-                  <div class="timeline-company">Bassirah</div>
-                  <div class="timeline-meta">
-                    <span class="timeline-date">Aug 2026 – Present</span>
-                    <span class="badge-type">Full-Time</span>
-                  </div>
-                  <ul class="timeline-bullets">
-                    <li>Built an AI-Native Lakehouse on MinIO AIStore Enterprise with Apache Iceberg tables across Bronze, Silver, and Gold medallion layers.</li>
-                    <li>Engineered real-time CDC pipelines with Apache Flink and Kafka ingesting transaction logs at sub-second latency.</li>
-                    <li>Developed batch ETL/ELT workflows using Apache Spark, dbt, and Airflow for scheduled data transformation.</li>
-                    <li>Delivered real-time OLAP analytics via ClickHouse and federated SQL queries through Trino.</li>
-                  </ul>
-                </li>
-
-                <li class="timeline-item">
-                  <div class="timeline-dot purple" aria-hidden="true"></div>
-                  <div class="timeline-role">Data Engineering Trainee</div>
-                  <div class="timeline-company">ITI — Information Technology Institute</div>
-                  <div class="timeline-meta">
-                    <span class="timeline-date">Jan 2026 – Present</span>
-                    <span class="badge-type">Training Program</span>
-                  </div>
-                  <p class="timeline-desc">
-                    Advancing Big Data and distributed systems expertise. Projects include
-                    an Examination System Database, Python Data Analysis, and a
-                    Dockerized Data Analytics platform.
-                  </p>
-                </li>
-
-                <li class="timeline-item">
-                  <div class="timeline-dot orange" aria-hidden="true"></div>
-                  <div class="timeline-role">Software Engineer</div>
-                  <div class="timeline-company">TrendLine</div>
-                  <div class="timeline-meta">
-                    <span class="timeline-date">Jun 2025 – Present</span>
-                    <span class="badge-type">Freelance</span>
-                  </div>
-                  <p class="timeline-desc">
-                    Built and deployed three client-facing web applications with
-                    ASP.NET Core and Angular.
-                  </p>
-                </li>
-
-                <li class="timeline-item">
-                  <div class="timeline-dot pink" aria-hidden="true"></div>
-                  <div class="timeline-role">Software Engineer</div>
-                  <div class="timeline-company">Techno Management</div>
-                  <div class="timeline-meta">
-                    <span class="timeline-date">Mar 2024 – Jan 2025</span>
-                    <span class="badge-type">Full-Time</span>
-                  </div>
-                  <p class="timeline-desc">
-                    Developed scalable .NET solutions (MVC &amp; Web APIs) for government
-                    and private sectors. Built SharePoint web parts with SQL Server and
-                    created Power BI dashboards with SSRS reports.
-                  </p>
-                </li>
-
-                <li class="timeline-item">
-                  <div class="timeline-dot amber" aria-hidden="true"></div>
-                  <div class="timeline-role">Coding Instructor</div>
-                  <div class="timeline-company">iSchool</div>
-                  <div class="timeline-meta">
-                    <span class="timeline-date">Mar 2024 – May 2024</span>
-                    <span class="badge-type">Part-Time</span>
-                  </div>
-                  <p class="timeline-desc">
-                    Taught 2D game development using Godot Engine and GDScript to students.
-                  </p>
-                </li>
-
-              </ol>
-            </div>
-
-            <!-- Education -->
-            <div class="about-subsection">
-              <p class="about-subsection-title">Education</p>
-              <ol class="timeline" aria-label="Education">
-                <li class="timeline-item">
-                  <div class="timeline-dot green" aria-hidden="true"></div>
-                  <div class="timeline-role">B.Sc. in Computer &amp; Artificial Intelligence</div>
-                  <div class="timeline-company">Helwan University</div>
-                  <div class="timeline-meta">
-                    <span class="timeline-date">2019 – 2023</span>
-                    <span class="badge-type">Grade: Very Good</span>
-                  </div>
-                  <p class="timeline-desc">CS — Medical Informatics Department</p>
-                </li>
-              </ol>
-            </div>
-
-            <!-- Mentorship -->
-            <div class="about-subsection">
-              <p class="about-subsection-title">Mentorship</p>
-              <ol class="timeline" aria-label="Mentorship">
-                <li class="timeline-item">
-                  <div class="timeline-dot emerald" aria-hidden="true"></div>
-                  <div class="timeline-role">Data Engineering Mentorship</div>
-                  <div class="timeline-company">
-                    <a href="https://www.linkedin.com/company/deloitte/" target="_blank" rel="noopener noreferrer"
-                       style="color:var(--accent-1);text-decoration:none;">Deloitte</a>
-                  </div>
-                  <div class="timeline-meta">
-                    <span class="timeline-date">Mentor: <a href="https://www.linkedin.com/in/mohamed-nasr-349289148/" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary)">Eng. Mohamed Nasr</a></span>
-                  </div>
-                  <p class="timeline-desc">
-                    Completed a structured Data Engineering mentorship program, gaining
-                    industry insights and practical guidance on distributed systems and
-                    data platform design.
-                  </p>
-                </li>
-              </ol>
-            </div>
-
-            <!-- Volunteering -->
-            <div class="about-subsection">
-              <p class="about-subsection-title">Volunteering</p>
-              <ol class="timeline" aria-label="Volunteering">
-                <li class="timeline-item">
-                  <div class="timeline-dot red" aria-hidden="true"></div>
-                  <div class="timeline-role">Data Management Specialist</div>
-                  <div class="timeline-company">Egyptian Red Crescent</div>
-                  <div class="timeline-meta">
-                    <span class="timeline-date">Jul 2026 – Present</span>
-                    <span class="badge-type">Health / Humanitarian</span>
-                  </div>
-                  <p class="timeline-desc">
-                    Supporting health data workflows and information systems for
-                    humanitarian operations.
-                  </p>
-                </li>
-              </ol>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         SKILLS
-    ═══════════════════════════════════════════════════════ -->
-    <section id="skills">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Technical Skills</span>
-          <h2 class="section-heading">Core Competencies</h2>
-          <span class="divider-line" aria-hidden="true"></span>
-          <p class="section-sub">
-            A data engineering stack spanning stream processing, batch pipelines,
-            lakehouse storage, analytics, cloud infrastructure, and development tooling.
+          <p class="hero-desc">
+            I began my career as a .NET backend developer, but soon discovered my passion for data engineering.
+            This led me to join the ITI Data Engineering track, where I honed my skills in building reliable,
+            queryable data platforms. Today, I design and implement everything from batch ETL workflows and
+            star-schema warehouses to real-time CDC pipelines and multi-layer lakehouses.
+            Currently, I’m working at Bassirah as a Data Engineer
           </p>
-        </header>
 
-        <div class="skills-categories reveal-stagger">
-
-          <!-- Languages -->
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon purple">
-                <i class="fas fa-code" aria-hidden="true"></i>
-              </div>
-              <span class="skill-category-title">Programming Languages</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">SQL</span>
-              <span class="skill-tag">Scala</span>
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">C#</span>
-              <span class="skill-tag">JavaScript</span>
-            </div>
-          </div>
-
-          <!-- Streaming & Batch -->
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon cyan">
-                <i class="fas fa-bolt" aria-hidden="true"></i>
-              </div>
-              <span class="skill-category-title">Stream &amp; Batch Processing</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Apache Flink</span>
-              <span class="skill-tag">Apache Spark</span>
-              <span class="skill-tag">Apache Kafka</span>
-              <span class="skill-tag">Hadoop</span>
-              <span class="skill-tag">CDC Pipelines</span>
-            </div>
-          </div>
-
-          <!-- Storage & Lakehouse -->
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon orange">
-                <i class="fas fa-layer-group" aria-hidden="true"></i>
-              </div>
-              <span class="skill-category-title">Storage &amp; Lakehouse</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">MinIO AIStore</span>
-              <span class="skill-tag">Apache Iceberg</span>
-              <span class="skill-tag">Snowflake</span>
-              <span class="skill-tag">Databricks</span>
-              <span class="skill-tag">Delta Lake</span>
-            </div>
-          </div>
-
-          <!-- Databases -->
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon teal">
-                <i class="fas fa-database" aria-hidden="true"></i>
-              </div>
-              <span class="skill-category-title">Databases &amp; OLAP</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">ClickHouse</span>
-              <span class="skill-tag">SQL Server</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">MongoDB</span>
-              <span class="skill-tag">Trino</span>
-            </div>
-          </div>
-
-          <!-- Orchestration & Transformation -->
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon green">
-                <i class="fas fa-wind" aria-hidden="true"></i>
-              </div>
-              <span class="skill-category-title">Orchestration &amp; Transformation</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Apache Airflow</span>
-              <span class="skill-tag">dbt</span>
-              <span class="skill-tag">SSIS</span>
-              <span class="skill-tag">SSAS</span>
-              <span class="skill-tag">ETL/ELT Design</span>
-            </div>
-          </div>
-
-          <!-- Analytics & BI -->
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon amber">
-                <i class="fas fa-chart-bar" aria-hidden="true"></i>
-              </div>
-              <span class="skill-category-title">Analytics &amp; BI</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Power BI</span>
-              <span class="skill-tag">SSRS</span>
-              <span class="skill-tag">Pandas</span>
-              <span class="skill-tag">Matplotlib</span>
-              <span class="skill-tag">Seaborn</span>
-              <span class="skill-tag">Excel</span>
-            </div>
-          </div>
-
-          <!-- Cloud & DevOps -->
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon pink">
-                <i class="fas fa-cloud" aria-hidden="true"></i>
-              </div>
-              <span class="skill-category-title">Cloud &amp; Infrastructure</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">AWS</span>
-              <span class="skill-tag">Azure</span>
-              <span class="skill-tag">Microsoft Fabric</span>
-              <span class="skill-tag">GCP</span>
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">CI/CD</span>
-            </div>
-          </div>
-
-          <!-- Dev Tools -->
-          <div class="skill-category">
-            <div class="skill-category-header">
-              <div class="skill-cat-icon purple">
-                <i class="fas fa-tools" aria-hidden="true"></i>
-              </div>
-              <span class="skill-category-title">Development Tools</span>
-            </div>
-            <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">REST APIs</span>
-              <span class="skill-tag">ASP.NET Core</span>
-              <span class="skill-tag">Angular</span>
-              <span class="skill-tag">SharePoint</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Languages -->
-        <div class="lang-chips reveal" aria-label="Spoken languages">
-          <div class="lang-chip">
-            <i class="fas fa-globe" aria-hidden="true"></i>
-            Arabic
-            <span class="lang-chip-level">Native</span>
-          </div>
-          <div class="lang-chip">
-            <i class="fas fa-globe" aria-hidden="true"></i>
-            English
-            <span class="lang-chip-level">Professional Proficiency</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         PROJECTS
-    ═══════════════════════════════════════════════════════ -->
-    <section id="projects" class="bg-alt">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Selected Projects</span>
-          <h2 class="section-heading">Data Engineering Work</h2>
-          <span class="divider-line" aria-hidden="true"></span>
-          <p class="section-sub">
-            End-to-end projects spanning pipeline design, data modeling, lakehouse
-            architecture, and analytics delivery.
-          </p>
-        </header>
-
-        <div class="projects-grid reveal-stagger">
-
-          <!-- Project 1: Netflix Data Pipeline -->
-          <article class="project-card" aria-label="Netflix End-to-End Data Pipeline project">
-            <div class="project-image">
-              <img src="assets/ARCHITECTURE DIAGRAM.png" alt="Architecture diagram showing the Netflix end-to-end data pipeline on AWS, Snowflake, and Databricks" />
-              <div class="project-image-overlay" aria-hidden="true"></div>
-              <div class="project-tech-row" aria-label="Technologies used">
-                <span class="project-tech-pill">AWS S3</span>
-                <span class="project-tech-pill">Snowflake</span>
-                <span class="project-tech-pill">Databricks</span>
-                <span class="project-tech-pill">dbt</span>
-                <span class="project-tech-pill">Power BI</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-objective">Modern Data Stack Pipeline</p>
-              <h3 class="project-title">Netflix End-to-End Data Pipeline</h3>
-              <p class="project-desc">
-                <strong>Objective:</strong> Process raw CSV movie/ratings data through a
-                full modern data stack into an analytical Power BI dashboard.<br><br>
-                <strong>Approach:</strong> Raw files land in AWS S3, are loaded into
-                Snowflake via a Databricks notebook, transformed and modeled with dbt
-                (fact/dimension tables), and surfaced through Power BI for reporting.<br><br>
-                <strong>Outcome:</strong> Demonstrates a complete cloud-native ELT workflow
-                from raw ingestion to business-ready analytics.
-              </p>
-              <div class="project-footer">
-                <a href="https://github.com/Ahmed-Hassan111/movielens-end-to-end-project.git"
-                   target="_blank" rel="noopener noreferrer"
-                   class="project-link" id="proj-netflix-github"
-                   aria-label="View Netflix pipeline on GitHub">
-                  <i class="fab fa-github" aria-hidden="true"></i>
-                  View on GitHub
-                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2: Sales Data Warehouse -->
-          <article class="project-card" aria-label="ETL Sales Data Warehouse project">
-            <div class="project-image">
-              <img src="assets/SSIS-FactSales.png" alt="SSIS data flow diagram for the Sales Data Warehouse ETL pipeline" />
-              <div class="project-image-overlay" aria-hidden="true"></div>
-              <div class="project-tech-row" aria-label="Technologies used">
-                <span class="project-tech-pill">SSIS</span>
-                <span class="project-tech-pill">SQL Server</span>
-                <span class="project-tech-pill">SSAS</span>
-                <span class="project-tech-pill">Power BI</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-objective">Enterprise Data Warehouse</p>
-              <h3 class="project-title">ETL — Sales Data Warehouse</h3>
-              <p class="project-desc">
-                <strong>Objective:</strong> Build an enterprise-grade data warehouse to
-                support sales analytics, customer segmentation, and geographic demand reporting.<br><br>
-                <strong>Approach:</strong> Designed a Star Schema DW populated via SSIS
-                ETL pipelines from operational sources, with SSAS cubes for multidimensional
-                analysis and Power BI dashboards for business reporting.<br><br>
-                <strong>Outcome:</strong> A complete BI stack from raw transactional data
-                to interactive dashboards.
-              </p>
-              <div class="project-footer">
-                <a href="https://github.com/Ahmed-Hassan111/DWH_Project.git"
-                   target="_blank" rel="noopener noreferrer"
-                   class="project-link" id="proj-dwh-github"
-                   aria-label="View Sales DWH on GitHub">
-                  <i class="fab fa-github" aria-hidden="true"></i>
-                  View on GitHub
-                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 3: Examination DB -->
-          <article class="project-card" aria-label="Examination System Database project">
-            <div class="project-image">
-              <img src="assets/Diagram.png" alt="Entity-Relationship diagram for the examination system database" />
-              <div class="project-image-overlay" aria-hidden="true"></div>
-              <div class="project-tech-row" aria-label="Technologies used">
-                <span class="project-tech-pill">SQL Server</span>
-                <span class="project-tech-pill">SSMS</span>
-                <span class="project-tech-pill">Stored Procedures</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-objective">Database Design</p>
-              <h3 class="project-title">Examination System Database</h3>
-              <p class="project-desc">
-                <strong>Objective:</strong> Design a normalized relational database for an
-                academic examination platform handling large volumes of student records.<br><br>
-                <strong>Approach:</strong> Applied normalization principles, implemented
-                stored procedures for business logic, and applied indexing strategies
-                to optimize query performance for 10,000+ student records.<br><br>
-                <strong>Outcome:</strong> A maintainable, performant schema supporting
-                complex query patterns for exam management workflows.
-              </p>
-              <div class="project-footer">
-                <a href="https://github.com/Ahmed-Hassan111/DataBaseProject-ITI.git"
-                   target="_blank" rel="noopener noreferrer"
-                   class="project-link" id="proj-db-github"
-                   aria-label="View Database Project on GitHub">
-                  <i class="fab fa-github" aria-hidden="true"></i>
-                  View on GitHub
-                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4: Data Analysis -->
-          <article class="project-card" aria-label="Python Data Analysis project">
-            <div class="project-image">
-              <img src="assets/Figure_5.png" alt="Data visualization chart from the Python data analysis pipeline" />
-              <div class="project-image-overlay" aria-hidden="true"></div>
-              <div class="project-tech-row" aria-label="Technologies used">
-                <span class="project-tech-pill">Python</span>
-                <span class="project-tech-pill">Pandas</span>
-                <span class="project-tech-pill">Matplotlib</span>
-                <span class="project-tech-pill">Seaborn</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <p class="project-objective">Data Analysis Pipeline</p>
-              <h3 class="project-title">Python Data Analysis Pipeline</h3>
-              <p class="project-desc">
-                <strong>Objective:</strong> Build an end-to-end data analysis workflow
-                covering ingestion through to visualization.<br><br>
-                <strong>Approach:</strong> Used Python and Pandas for data ingestion,
-                cleaning, and transformation; Matplotlib and Seaborn for exploratory
-                visualization.<br><br>
-                <strong>Outcome:</strong> A reproducible analysis pipeline demonstrating
-                core data wrangling and visualization competencies.
-              </p>
-              <div class="project-footer">
-                <a href="https://github.com/Ahmed-Hassan111/users-data-analysis-project-ITI.git"
-                   target="_blank" rel="noopener noreferrer"
-                   class="project-link" id="proj-analysis-github"
-                   aria-label="View Data Analysis project on GitHub">
-                  <i class="fab fa-github" aria-hidden="true"></i>
-                  View on GitHub
-                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <div class="reveal" style="text-align:center;margin-top:44px;">
-          <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer"
-             class="btn-secondary" id="all-projects-link">
-            <i class="fab fa-github" aria-hidden="true"></i>
-            View All Projects on GitHub
-            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         CERTIFICATIONS & TRAINING
-    ═══════════════════════════════════════════════════════ -->
-    <section id="certifications">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Credentials</span>
-          <h2 class="section-heading">Certifications &amp; Training</h2>
-          <span class="divider-line" aria-hidden="true"></span>
-          <p class="section-sub">
-            Industry certifications and structured training programs that complement
-            hands-on engineering experience.
-          </p>
-        </header>
-
-        <!-- Certifications -->
-        <h3 class="about-subsection-title reveal" style="margin-bottom:24px;">Certifications</h3>
-        <div class="certs-grid reveal-stagger">
-
-          <!-- DP-700 -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(56,189,248,0.10);">
-              <i class="fab fa-microsoft" style="color:#38bdf8;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#38bdf8;">Microsoft</div>
-            <div class="cert-name">Fabric Data Engineer Associate</div>
-            <div class="cert-date">DP-700 &nbsp;·&nbsp; July 2026</div>
-            <span class="cert-tag" style="background:rgba(56,189,248,0.08);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">Microsoft Fabric</span>
-          </div>
-
-          <!-- ClickHouse -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(251,191,36,0.10);">
-              <i class="fas fa-database" style="color:#fbbf24;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#fbbf24;">ClickHouse</div>
-            <div class="cert-name">ClickHouse Certified Developer</div>
-            <div class="cert-date">Aug 2026</div>
-            <span class="cert-tag" style="background:rgba(251,191,36,0.08);color:#fbbf24;border:1px solid rgba(251,191,36,0.2);">OLAP Analytics</span>
-          </div>
-
-          <!-- AWS Data Engineering -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(251,146,60,0.10);">
-              <i class="fab fa-aws" style="color:#fb923c;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#fb923c;">AWS Academy</div>
-            <div class="cert-name">AWS Academy Graduate — Data Engineering</div>
-            <div class="cert-date">May 2026</div>
-            <span class="cert-tag" style="background:rgba(251,146,60,0.08);color:#fb923c;border:1px solid rgba(251,146,60,0.2);">Cloud Data</span>
-          </div>
-
-          <!-- AWS Cloud Foundations -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(251,146,60,0.08);">
-              <i class="fab fa-aws" style="color:#fdba74;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#fdba74;">AWS Academy</div>
-            <div class="cert-name">AWS Academy Graduate — Cloud Foundations</div>
-            <div class="cert-date">May 2026</div>
-            <span class="cert-tag" style="background:rgba(253,186,116,0.08);color:#fdba74;border:1px solid rgba(253,186,116,0.2);">Cloud</span>
-          </div>
-
-          <!-- Python NTI -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(56,189,248,0.08);">
-              <i class="fab fa-python" style="color:#60a5fa;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#60a5fa;">NTI</div>
-            <div class="cert-name">Python for Data Analysis</div>
-            <div class="cert-date">Mar 2026</div>
-            <span class="cert-tag" style="background:rgba(96,165,250,0.08);color:#60a5fa;border:1px solid rgba(96,165,250,0.2);">Data Analysis</span>
-          </div>
-
-          <!-- .NET Coursera -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(129,140,248,0.10);">
-              <i class="fas fa-graduation-cap" style="color:#818cf8;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#818cf8;">Coursera</div>
-            <div class="cert-name">Backend Development — .NET Full Stack</div>
-            <div class="cert-date">Sep 2023</div>
-            <span class="cert-tag" style="background:rgba(129,140,248,0.08);color:#818cf8;border:1px solid rgba(129,140,248,0.2);">.NET</span>
-          </div>
-
-        </div>
-
-        <!-- Internships -->
-        <h3 class="about-subsection-title reveal" style="margin-top:56px;margin-bottom:24px;">Professional Training &amp; Internships</h3>
-        <div class="internship-grid reveal-stagger">
-
-          <!-- DEPI -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(129,140,248,0.10);">
-              <i class="fas fa-network-wired" style="color:#818cf8;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#818cf8;">DEPI</div>
-            <div class="cert-name">Data Engineering Track</div>
-            <div class="cert-date">Jan 2026 – Jun 2026</div>
-            <p style="font-size:0.8125rem;color:var(--text-secondary);margin-top:10px;line-height:1.55;">
-              Hands-on training in Big Data pipelines, distributed systems, and data warehouse design.
-            </p>
-          </div>
-
-          <!-- Skarpt -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(244,114,182,0.10);">
-              <i class="fas fa-eye" style="color:#f472b6;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#f472b6;">Skärpt</div>
-            <div class="cert-name">AI Engineer — Computer Vision</div>
-            <div class="cert-date">Feb 2025 – May 2025 · R&amp;D</div>
-            <p style="font-size:0.8125rem;color:var(--text-secondary);margin-top:10px;line-height:1.55;">
-              Developed computer-vision models achieving 90% accuracy in PPE detection for workplace safety compliance.
-            </p>
-          </div>
-
-          <!-- Hospital 57357 -->
-          <div class="cert-card">
-            <div class="cert-icon-wrap" style="background:rgba(74,222,128,0.10);">
-              <i class="fas fa-hospital" style="color:#4ade80;" aria-hidden="true"></i>
-            </div>
-            <div class="cert-issuer" style="color:#4ade80;">Hospital 57357</div>
-            <div class="cert-name">Hospital Information Systems (HIS)</div>
-            <div class="cert-date">Jul 2023</div>
-            <p style="font-size:0.8125rem;color:var(--text-secondary);margin-top:10px;line-height:1.55;">
-              Trained on Hospital Information Systems and healthcare data management workflows.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         CONTACT
-    ═══════════════════════════════════════════════════════ -->
-    <section id="contact" class="bg-alt">
-      <div class="container">
-
-        <header class="section-header reveal">
-          <span class="section-label">Contact</span>
-          <h2 class="section-heading">Let's Work Together</h2>
-          <span class="divider-line" aria-hidden="true"></span>
-          <p class="section-sub">
-            Have a data engineering challenge or an opportunity to discuss?
-            I'd be glad to connect.
-          </p>
-        </header>
-
-        <div class="contact-wrap reveal">
-
-          <!-- Contact info card -->
-          <div class="contact-card">
-            <h3 style="font-size:1.125rem;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Contact Information</h3>
-            <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:8px;">Giza, Egypt</p>
-
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <p class="contact-label">Email</p>
-                <a href="mailto:ahmedhassansaad7@gmail.com" class="contact-value" id="contact-email">
-                  ahmedhassansaad7@gmail.com
-                </a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div>
-                <p class="contact-label">Phone</p>
-                <a href="tel:+201022624475" class="contact-value" id="contact-phone">
-                  +20 102 262 4475
-                </a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div>
-                <p class="contact-label">Location</p>
-                <span class="contact-value">Giza, Egypt</span>
-              </div>
-            </div>
-
-            <p class="contact-socials-heading">Connect on</p>
-            <div class="social-row">
-              <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer"
-                 class="social-btn" id="contact-github" aria-label="GitHub profile">
-                <i class="fab fa-github" aria-hidden="true"></i>
-                GitHub
-              </a>
-              <a href="https://www.linkedin.com/in/ahmed-hassan-dataeng/" target="_blank" rel="noopener noreferrer"
-                 class="social-btn" id="contact-linkedin" aria-label="LinkedIn profile">
-                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                LinkedIn
-              </a>
-            </div>
-          </div>
-
-          <!-- Availability card -->
-          <div class="availability-card">
-            <div class="availability-status">
-              <span class="avail-dot" aria-hidden="true"></span>
-              Available for new opportunities
-            </div>
-            <h3 class="availability-heading">
-              Open to data engineering roles and consulting projects
-            </h3>
-            <p class="availability-desc">
-              I'm interested in full-time data engineering positions, contract work on
-              data platform projects, and collaborations involving real-time pipelines,
-              lakehouse architecture, or analytics infrastructure.
-            </p>
-            <a href="mailto:ahmedhassansaad7@gmail.com" class="btn-primary" id="contact-cta-email"
-               style="display:inline-flex;margin-top:4px;">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
-              Send Me an Email
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary" id="hero-cta-projects">
+              <i class="fas fa-layer-group" aria-hidden="true"></i>
+              Explore My Projects
+            </a>
+            <a href="#contact" class="btn-secondary" id="hero-cta-contact">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              Get in Touch
             </a>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════════
-         FOOTER
-    ═══════════════════════════════════════════════════════ -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-inner">
-          <div>
-            <span class="footer-brand gradient-text">AHMED HASSAN</span>
-            <p class="footer-copy" style="margin-top:4px;">Data Engineer · Giza, Egypt</p>
-          </div>
-
-          <p class="footer-copy">© 2026 Ahmed Hassan. All rights reserved.</p>
-
-          <div class="footer-links">
+          <div class="hero-socials">
+            <span class="hero-social-label">Find me on</span>
             <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer"
-               class="footer-link" aria-label="GitHub profile">
+              class="hero-social-link" id="hero-github" aria-label="GitHub profile">
               <i class="fab fa-github" aria-hidden="true"></i>
             </a>
             <a href="https://www.linkedin.com/in/ahmed-hassan-dataeng/" target="_blank" rel="noopener noreferrer"
-               class="footer-link" aria-label="LinkedIn profile">
+              class="hero-social-link" id="hero-linkedin" aria-label="LinkedIn profile">
               <i class="fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
-            <a href="mailto:ahmedhassansaad7@gmail.com"
-               class="footer-link" aria-label="Send email">
-              <i class="fas fa-envelope" aria-hidden="true"></i>
+          </div>
+
+          <!-- Pipeline visual -->
+          <div class="pipeline-mini" aria-label="Data pipeline stages: Ingest, Stream, Transform, Store, Analyze">
+            <span class="pipe-step">Ingest</span>
+            <span class="pipe-arrow" aria-hidden="true">→</span>
+            <span class="pipe-step">Stream or Batch</span>
+            <span class="pipe-arrow" aria-hidden="true">→</span>
+            <span class="pipe-step">Transform & model</span>
+            <span class="pipe-arrow" aria-hidden="true">→</span>
+            <span class="pipe-step">Store</span>
+            <span class="pipe-arrow" aria-hidden="true">→</span>
+            <span class="pipe-step">Analyze</span>
+          </div>
+        </div>
+
+        <!-- Portrait -->
+        <div class="hero-image-wrap" aria-hidden="true">
+          <div class="hero-image-ring"></div>
+          <div class="hero-image-card">
+            <img src="assets/me.jpeg" alt="Ahmed Hassan — Data Engineer" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════════════════ -->
+  <section id="about" class="bg-alt">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">About Me</span>
+        <h2 class="section-heading">The Story Behind the Systems: Who I Am &amp; What Drives Me</h2>
+        <span class="divider-line" aria-hidden="true"></span>
+        <p class="section-sub">
+          A software engineering background, an ITI journey, and a genuine passion for scalable data platforms.
+        </p>
+      </header>
+
+      <div class="about-grid reveal">
+
+        <!-- Portrait + stats -->
+        <div>
+          <div class="about-portrait-frame">
+            <img src="assets/me.jpeg" alt="Ahmed Hassan portrait" />
+          </div>
+          <div class="about-stats" aria-label="Key stats">
+            <div class="about-stat">
+              <span class="about-stat-value">1+</span>
+              <span class="about-stat-label">Years in Data Eng.</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value">10+</span>
+              <span class="about-stat-label">Data Projects</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat-value">6+</span>
+              <span class="about-stat-label">Certifications</span>
+            </div>
+            <!-- <div class="about-stat">
+              <span class="about-stat-value">ERC</span>
+              <span class="about-stat-label">Volunteer</span>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div class="about-body">
+          <p>
+            I started my career as a .NET backend developer at Techno Management,
+            building web APIs, MVC applications, and reporting solutions for government
+            and private-sector clients. Through the ITI Data Engineering Program, I
+            discovered a genuine passion for data infrastructure and made a deliberate
+            career transition — one I haven't looked back from.
+          </p>
+          <p>
+            My data engineering work spans both batch and real-time: designing ETL/ELT
+            pipelines with Spark, dbt, Airflow, and SSIS; building star-schema data
+            warehouses and analytical models; and engineering CDC streaming systems
+            with Flink and Kafka for sub-second data delivery. At Bassirah, I'm building
+            an AI-Native Lakehouse on MinIO AIStore with Apache Iceberg medallion layers,
+            centralized ClickHouse warehousing for sub-second OLAP, and GenAI integrations
+            enabling conversational data exploration.
+          </p>
+
+          <!-- Experience timeline -->
+          <div class="about-subsection">
+            <p class="about-subsection-title">Professional Experience</p>
+            <ol class="timeline" aria-label="Work experience timeline">
+
+              <li class="timeline-item">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <div class="timeline-role">Data Engineer</div>
+                <div class="timeline-company">Bassirah</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Aug 2026 – Present</span>
+                  <span class="badge-type">Full-Time</span>
+                </div>
+                <ul class="timeline-bullets">
+                  <li>Built an AI-Native Lakehouse on MinIO AIStore with Apache Iceberg medallion layers, orchestrating both streaming (Flink, Kafka CDC) and batch (Spark, dbt) pipelines.</li>
+                  <li>Architected a centralized Data Warehouse on ClickHouse for ultra-fast OLAP analytics and Trino query federation.</li>
+                  <li>Integrated ClickHouse with GenAI solutions, empowering clients to query business data in natural language and receive real-time AI-powered answers.</li>
+                </ul>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot purple" aria-hidden="true"></div>
+                <div class="timeline-role">Data Engineering Trainee</div>
+                <div class="timeline-company">ITI — Information Technology Institute</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Jan 2026 – Present</span>
+                  <span class="badge-type">Training Program</span>
+                </div>
+                <p class="timeline-desc">
+                  Intensive specialization in Big Data &amp; distributed systems. Completed the flagship graduation project:
+                  <strong>Football Analytics Platform</strong> (Dual Spark/Kafka streaming &amp; Snowflake/dbt/Airflow batch),
+                  alongside database architecture and advanced data modeling projects.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot orange" aria-hidden="true"></div>
+                <div class="timeline-role">Software Engineer</div>
+                <div class="timeline-company">TrendLine</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Jun 2025 – Present</span>
+                  <span class="badge-type">Freelance</span>
+                </div>
+                <p class="timeline-desc">
+                  Built and deployed three client-facing web applications with
+                  ASP.NET Core and Angular.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot pink" aria-hidden="true"></div>
+                <div class="timeline-role">Software Engineer</div>
+                <div class="timeline-company">Techno Management</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Mar 2024 – Jan 2025</span>
+                  <span class="badge-type">Full-Time</span>
+                </div>
+                <p class="timeline-desc">
+                  Developed scalable .NET solutions (MVC &amp; Web APIs) for government
+                  and private sectors. Built SharePoint web parts with SQL Server and
+                  created Power BI dashboards with SSRS reports.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot amber" aria-hidden="true"></div>
+                <div class="timeline-role">Coding Instructor</div>
+                <div class="timeline-company">iSchool</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Mar 2024 – May 2024</span>
+                  <span class="badge-type">Part-Time</span>
+                </div>
+                <p class="timeline-desc">
+                  Taught 2D game development using Godot Engine and GDScript to students.
+                </p>
+              </li>
+
+            </ol>
+          </div>
+
+          <!-- Internships & Training -->
+          <div class="about-subsection">
+            <p class="about-subsection-title">Internships &amp; Training</p>
+            <ol class="timeline" aria-label="Internships and training">
+
+              <li class="timeline-item">
+                <div class="timeline-dot purple" aria-hidden="true"></div>
+                <div class="timeline-role">Data Engineering Trainee</div>
+                <div class="timeline-company">DEPI — Digital Egypt Pioneers Initiative</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Jan 2026 – Jun 2026</span>
+                  <span class="badge-type">Training Program</span>
+                </div>
+                <p class="timeline-desc">
+                  Hands-on training in Big Data pipelines, distributed systems, and data
+                  warehouse design. Projects include an Examination System Database,
+                  Python Data Analysis, and a Dockerized Data Analytics platform.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot pink" aria-hidden="true"></div>
+                <div class="timeline-role">AI Engineer — Computer Vision</div>
+                <div class="timeline-company">Skärpt</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Feb 2025 – May 2025</span>
+                  <span class="badge-type">R&amp;D Internship</span>
+                </div>
+                <p class="timeline-desc">
+                  Developed computer-vision models achieving 90% accuracy in PPE
+                  detection for workplace safety compliance.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <div class="timeline-dot green" aria-hidden="true"></div>
+                <div class="timeline-role">Hospital Information Systems (HIS)</div>
+                <div class="timeline-company">Hospital 57357</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">Jul 2023</span>
+                  <span class="badge-type">Internship</span>
+                </div>
+                <p class="timeline-desc">
+                  Trained on Hospital Information Systems and healthcare data management
+                  workflows.
+                </p>
+              </li>
+
+            </ol>
+          </div>
+
+          <!-- Education -->
+          <div class="about-subsection">
+            <p class="about-subsection-title">Education</p>
+            <ol class="timeline" aria-label="Education">
+              <li class="timeline-item">
+                <div class="timeline-dot green" aria-hidden="true"></div>
+                <div class="timeline-role">B.Sc. in Computer &amp; Artificial Intelligence</div>
+                <div class="timeline-company">Helwan University</div>
+                <div class="timeline-meta">
+                  <span class="timeline-date">2019 – 2023</span>
+                  <span class="badge-type">Grade: Very Good</span>
+                </div>
+                <p class="timeline-desc">CS — Medical Informatics Department</p>
+              </li>
+            </ol>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+         SKILLS
+    ═══════════════════════════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">Technical Skills</span>
+        <h2 class="section-heading">Core Competencies</h2>
+        <span class="divider-line" aria-hidden="true"></span>
+        <p class="section-sub">
+          A data engineering stack spanning stream processing, batch pipelines,
+          lakehouse storage, analytics, cloud infrastructure, and development tooling.
+        </p>
+      </header>
+
+      <div class="skills-categories reveal-stagger">
+
+        <!-- Languages -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-cat-icon purple">
+              <i class="fas fa-code" aria-hidden="true"></i>
+            </div>
+            <span class="skill-category-title">Programming Languages</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Scala</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Streaming & Batch -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-cat-icon cyan">
+              <i class="fas fa-bolt" aria-hidden="true"></i>
+            </div>
+            <span class="skill-category-title">Stream &amp; Batch Processing</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Apache Flink</span>
+            <span class="skill-tag">Apache Spark</span>
+            <span class="skill-tag">Apache Kafka</span>
+            <span class="skill-tag">Hadoop</span>
+            <span class="skill-tag">CDC Pipelines</span>
+          </div>
+        </div>
+
+        <!-- Storage & Lakehouse -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-cat-icon orange">
+              <i class="fas fa-layer-group" aria-hidden="true"></i>
+            </div>
+            <span class="skill-category-title">Storage &amp; Lakehouse</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">MinIO AIStore</span>
+            <span class="skill-tag">Apache Iceberg</span>
+            <span class="skill-tag">Snowflake</span>
+            <span class="skill-tag">Databricks</span>
+            <span class="skill-tag">Delta Lake</span>
+          </div>
+        </div>
+
+        <!-- Databases -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-cat-icon teal">
+              <i class="fas fa-database" aria-hidden="true"></i>
+            </div>
+            <span class="skill-category-title">Databases &amp; OLAP</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">ClickHouse</span>
+            <span class="skill-tag">SQL Server</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Trino</span>
+          </div>
+        </div>
+
+        <!-- Orchestration & Transformation -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-cat-icon green">
+              <i class="fas fa-wind" aria-hidden="true"></i>
+            </div>
+            <span class="skill-category-title">Orchestration &amp; Transformation</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Apache Airflow</span>
+            <span class="skill-tag">dbt</span>
+            <span class="skill-tag">SSIS</span>
+            <span class="skill-tag">SSAS</span>
+            <span class="skill-tag">ETL/ELT Design</span>
+          </div>
+        </div>
+
+        <!-- Analytics & BI -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-cat-icon amber">
+              <i class="fas fa-chart-bar" aria-hidden="true"></i>
+            </div>
+            <span class="skill-category-title">Analytics &amp; BI</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">SSRS</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Matplotlib</span>
+            <span class="skill-tag">Seaborn</span>
+            <span class="skill-tag">Excel</span>
+          </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-cat-icon pink">
+              <i class="fas fa-cloud" aria-hidden="true"></i>
+            </div>
+            <span class="skill-category-title">Cloud &amp; Infrastructure</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">Microsoft Fabric</span>
+            <span class="skill-tag">GCP</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">CI/CD</span>
+          </div>
+        </div>
+
+        <!-- Dev Tools -->
+        <div class="skill-category">
+          <div class="skill-category-header">
+            <div class="skill-cat-icon purple">
+              <i class="fas fa-tools" aria-hidden="true"></i>
+            </div>
+            <span class="skill-category-title">Development Tools</span>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">ASP.NET Core</span>
+            <span class="skill-tag">Angular</span>
+            <span class="skill-tag">SharePoint</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Languages -->
+      <div class="lang-chips reveal" aria-label="Spoken languages">
+        <div class="lang-chip">
+          <i class="fas fa-globe" aria-hidden="true"></i>
+          Arabic
+          <span class="lang-chip-level">Native</span>
+        </div>
+        <div class="lang-chip">
+          <i class="fas fa-globe" aria-hidden="true"></i>
+          English
+          <span class="lang-chip-level">Professional Proficiency</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+         PROJECTS
+    ═══════════════════════════════════════════════════════ -->
+  <section id="projects" class="bg-alt">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">Selected Projects</span>
+        <h2 class="section-heading">Data Engineering Work</h2>
+        <span class="divider-line" aria-hidden="true"></span>
+        <p class="section-sub">
+          End-to-end projects spanning pipeline design, data modeling, lakehouse
+          architecture, and analytics delivery.
+        </p>
+      </header>
+
+      <div class="projects-grid reveal-stagger">
+
+        <!-- Project 1: Football Analytics (ITI Graduation Project) -->
+        <article class="project-card" aria-label="Football Analytics Live and Batch Match Intelligence project">
+          <div class="project-image">
+            <img src="assets/Football_Project.png"
+              alt="Architecture diagram and analytics dashboards for the Football Analytics live and batch platform" />
+            <div class="project-image-overlay" aria-hidden="true"></div>
+            <div class="project-tech-row" aria-label="Technologies used">
+              <span class="project-tech-pill">Snowflake</span>
+              <span class="project-tech-pill">Apache Spark</span>
+              <span class="project-tech-pill">Apache Kafka</span>
+              <span class="project-tech-pill">AWS S3</span>
+              <span class="project-tech-pill">dbt</span>
+              <span class="project-tech-pill">Airflow</span>
+              <span class="project-tech-pill">Power BI</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-objective">ITI Graduation Project · Dual Batch &amp; Streaming Platform</p>
+            <h3 class="project-title">Football Analytics — Live &amp; Batch Match Intelligence</h3>
+            <p class="project-desc">
+              <strong>Objective:</strong> Build a dual batch &amp; streaming platform processing 1.8M+ football records across 150K+ matches for analytics and live simulation.<br><br>
+              <strong>Approach:</strong> PySpark cleans raw S3 data; Snowflake + dbt build a Galaxy Schema orchestrated by Airflow. Simultaneously, Kafka streams events into Spark, InfluxDB, and Grafana.<br><br>
+              <strong>Outcome:</strong> Delivered 3 Power BI dashboards and real-time Grafana match monitoring with automated data tests and sub-second stream latency.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/Ahmed-Hassan111/Football-Analytics-Live-Batch-Match-Intelligence.git" target="_blank"
+                rel="noopener noreferrer" class="project-link" id="proj-football-github"
+                aria-label="View Football Analytics project on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                View on GitHub
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Netflix Data Pipeline -->
+        <article class="project-card" aria-label="Netflix End-to-End Data Pipeline project">
+          <div class="project-image">
+            <img src="assets/ARCHITECTURE DIAGRAM.png"
+              alt="Architecture diagram showing the Netflix end-to-end data pipeline on AWS, Snowflake, and Databricks" />
+            <div class="project-image-overlay" aria-hidden="true"></div>
+            <div class="project-tech-row" aria-label="Technologies used">
+              <span class="project-tech-pill">AWS S3</span>
+              <span class="project-tech-pill">Snowflake</span>
+              <span class="project-tech-pill">Databricks</span>
+              <span class="project-tech-pill">dbt</span>
+              <span class="project-tech-pill">Power BI</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-objective">Modern Data Stack Pipeline</p>
+            <h3 class="project-title">Netflix End-to-End Data Pipeline</h3>
+            <p class="project-desc">
+              <strong>Objective:</strong> Process raw CSV movie/ratings data through a
+              full modern data stack into an analytical Power BI dashboard.<br><br>
+              <strong>Approach:</strong> Raw files land in AWS S3, are loaded into
+              Snowflake via a Databricks notebook, transformed and modeled with dbt
+              (fact/dimension tables), and surfaced through Power BI for reporting.<br><br>
+              <strong>Outcome:</strong> Demonstrates a complete cloud-native ELT workflow
+              from raw ingestion to business-ready analytics.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/Ahmed-Hassan111/movielens-end-to-end-project.git" target="_blank"
+                rel="noopener noreferrer" class="project-link" id="proj-netflix-github"
+                aria-label="View Netflix pipeline on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                View on GitHub
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Sales Data Warehouse -->
+        <article class="project-card" aria-label="ETL Sales Data Warehouse project">
+          <div class="project-image">
+            <img src="assets/SSIS-FactSales.png"
+              alt="SSIS data flow diagram for the Sales Data Warehouse ETL pipeline" />
+            <div class="project-image-overlay" aria-hidden="true"></div>
+            <div class="project-tech-row" aria-label="Technologies used">
+              <span class="project-tech-pill">SSIS</span>
+              <span class="project-tech-pill">SQL Server</span>
+              <span class="project-tech-pill">SSAS</span>
+              <span class="project-tech-pill">Power BI</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-objective">Enterprise Data Warehouse</p>
+            <h3 class="project-title">ETL — Sales Data Warehouse</h3>
+            <p class="project-desc">
+              <strong>Objective:</strong> Build an enterprise-grade data warehouse to
+              support sales analytics, customer segmentation, and geographic demand reporting.<br><br>
+              <strong>Approach:</strong> Designed a Star Schema DW populated via SSIS
+              ETL pipelines from operational sources, with SSAS cubes for multidimensional
+              analysis and Power BI dashboards for business reporting.<br><br>
+              <strong>Outcome:</strong> A complete BI stack from raw transactional data
+              to interactive dashboards.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/Ahmed-Hassan111/DWH_Project.git" target="_blank" rel="noopener noreferrer"
+                class="project-link" id="proj-dwh-github" aria-label="View Sales DWH on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                View on GitHub
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Examination DB -->
+        <article class="project-card" aria-label="Examination System Database project">
+          <div class="project-image">
+            <img src="assets/Diagram.png" alt="Entity-Relationship diagram for the examination system database" />
+            <div class="project-image-overlay" aria-hidden="true"></div>
+            <div class="project-tech-row" aria-label="Technologies used">
+              <span class="project-tech-pill">SQL Server</span>
+              <span class="project-tech-pill">SSMS</span>
+              <span class="project-tech-pill">Stored Procedures</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-objective">Database Design</p>
+            <h3 class="project-title">Examination System Database</h3>
+            <p class="project-desc">
+              <strong>Objective:</strong> Design a normalized relational database for an
+              academic examination platform handling large volumes of student records.<br><br>
+              <strong>Approach:</strong> Applied normalization principles, implemented
+              stored procedures for business logic, and applied indexing strategies
+              to optimize query performance for 10,000+ student records.<br><br>
+              <strong>Outcome:</strong> A maintainable, performant schema supporting
+              complex query patterns for exam management workflows.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/Ahmed-Hassan111/DataBaseProject-ITI.git" target="_blank"
+                rel="noopener noreferrer" class="project-link" id="proj-db-github"
+                aria-label="View Database Project on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                View on GitHub
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Data Analysis -->
+        <article class="project-card" aria-label="Python Data Analysis project">
+          <div class="project-image">
+            <img src="assets/Figure_5.png" alt="Data visualization chart from the Python data analysis pipeline" />
+            <div class="project-image-overlay" aria-hidden="true"></div>
+            <div class="project-tech-row" aria-label="Technologies used">
+              <span class="project-tech-pill">Python</span>
+              <span class="project-tech-pill">Pandas</span>
+              <span class="project-tech-pill">Matplotlib</span>
+              <span class="project-tech-pill">Seaborn</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p class="project-objective">Data Analysis Pipeline</p>
+            <h3 class="project-title">Python Data Analysis Pipeline</h3>
+            <p class="project-desc">
+              <strong>Objective:</strong> Build an end-to-end data analysis workflow
+              covering ingestion through to visualization.<br><br>
+              <strong>Approach:</strong> Used Python and Pandas for data ingestion,
+              cleaning, and transformation; Matplotlib and Seaborn for exploratory
+              visualization.<br><br>
+              <strong>Outcome:</strong> A reproducible analysis pipeline demonstrating
+              core data wrangling and visualization competencies.
+            </p>
+            <div class="project-footer">
+              <a href="https://github.com/Ahmed-Hassan111/users-data-analysis-project-ITI.git" target="_blank"
+                rel="noopener noreferrer" class="project-link" id="proj-analysis-github"
+                aria-label="View Data Analysis project on GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                View on GitHub
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="reveal" style="text-align:center;margin-top:44px;">
+        <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer" class="btn-secondary"
+          id="all-projects-link">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          View All Projects on GitHub
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+         CERTIFICATIONS & TRAINING
+    ═══════════════════════════════════════════════════════ -->
+  <section id="certifications">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">Credentials</span>
+        <h2 class="section-heading">Certifications &amp; Training</h2>
+        <span class="divider-line" aria-hidden="true"></span>
+        <p class="section-sub">
+          Industry certifications and structured training programs that complement
+          hands-on engineering experience.
+        </p>
+      </header>
+
+      <!-- Certifications -->
+      <h3 class="about-subsection-title reveal" style="margin-bottom:24px;">Certifications</h3>
+      <div class="certs-grid reveal-stagger">
+
+        <!-- DP-700 -->
+        <div class="cert-card">
+          <div class="cert-icon-wrap" style="background:rgba(56,189,248,0.10);">
+            <i class="fab fa-microsoft" style="color:#38bdf8;" aria-hidden="true"></i>
+          </div>
+          <div class="cert-issuer" style="color:#38bdf8;">Microsoft</div>
+          <div class="cert-name">Fabric Data Engineer Associate</div>
+          <div class="cert-date">DP-700 &nbsp;·&nbsp; July 2026</div>
+          <span class="cert-tag"
+            style="background:rgba(56,189,248,0.08);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">Microsoft
+            Fabric</span>
+          <div style="margin-top:14px;">
+            <a href="https://learn.microsoft.com/en-us/users/ahmedhassansaadeldenaly-0641/credentials/3a4d007139c6d6cc"
+              target="_blank" rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;color:#38bdf8;text-decoration:none;opacity:0.85;transition:opacity 0.2s;"
+              onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+              <i class="fas fa-external-link-alt" style="font-size:0.65rem;"></i> View Credential
             </a>
           </div>
         </div>
-      </div>
-    </footer>
 
-    <script src="script.js"></script>
-  </body>
+        <!-- ClickHouse -->
+        <div class="cert-card">
+          <div class="cert-icon-wrap" style="background:rgba(251,191,36,0.10);">
+            <i class="fas fa-database" style="color:#fbbf24;" aria-hidden="true"></i>
+          </div>
+          <div class="cert-issuer" style="color:#fbbf24;">ClickHouse</div>
+          <div class="cert-name">ClickHouse Certified Developer</div>
+          <div class="cert-date">Aug 2026</div>
+          <span class="cert-tag"
+            style="background:rgba(251,191,36,0.08);color:#fbbf24;border:1px solid rgba(251,191,36,0.2);">OLAP
+            Analytics</span>
+          <div style="margin-top:14px;">
+            <a href="https://drive.google.com/file/d/1SOnTtHZinOG38i17eFxK5hUU4cfZXPN3/view" target="_blank"
+              rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;color:#fbbf24;text-decoration:none;opacity:0.85;transition:opacity 0.2s;"
+              onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+              <i class="fas fa-external-link-alt" style="font-size:0.65rem;"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- AWS Data Engineering -->
+        <div class="cert-card">
+          <div class="cert-icon-wrap" style="background:rgba(251,146,60,0.10);">
+            <i class="fab fa-aws" style="color:#fb923c;" aria-hidden="true"></i>
+          </div>
+          <div class="cert-issuer" style="color:#fb923c;">AWS Academy</div>
+          <div class="cert-name">AWS Academy Graduate — Data Engineering</div>
+          <div class="cert-date">May 2026</div>
+          <span class="cert-tag"
+            style="background:rgba(251,146,60,0.08);color:#fb923c;border:1px solid rgba(251,146,60,0.2);">Cloud
+            Data</span>
+          <div style="margin-top:14px;">
+            <a href="https://drive.google.com/file/d/1ZBfIe-L2I_xJFBonyv8AwYJ1uoznXnGT/view" target="_blank"
+              rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;color:#fb923c;text-decoration:none;opacity:0.85;transition:opacity 0.2s;"
+              onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+              <i class="fas fa-external-link-alt" style="font-size:0.65rem;"></i> View Badge
+            </a>
+          </div>
+        </div>
+
+        <!-- AWS Cloud Foundations -->
+        <div class="cert-card">
+          <div class="cert-icon-wrap" style="background:rgba(251,146,60,0.08);">
+            <i class="fab fa-aws" style="color:#fdba74;" aria-hidden="true"></i>
+          </div>
+          <div class="cert-issuer" style="color:#fdba74;">AWS Academy</div>
+          <div class="cert-name">AWS Academy Graduate — Cloud Foundations</div>
+          <div class="cert-date">May 2026</div>
+          <span class="cert-tag"
+            style="background:rgba(253,186,116,0.08);color:#fdba74;border:1px solid rgba(253,186,116,0.2);">Cloud</span>
+          <div style="margin-top:14px;">
+            <a href="https://drive.google.com/file/d/1DqfDnMK_tvhpSjuEdSkz2u5gffjXfdBc/view" target="_blank"
+              rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;color:#fdba74;text-decoration:none;opacity:0.85;transition:opacity 0.2s;"
+              onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+              <i class="fas fa-external-link-alt" style="font-size:0.65rem;"></i> View Badge
+            </a>
+          </div>
+        </div>
+
+        <!-- Python NTI -->
+        <div class="cert-card">
+          <div class="cert-icon-wrap" style="background:rgba(56,189,248,0.08);">
+            <i class="fab fa-python" style="color:#60a5fa;" aria-hidden="true"></i>
+          </div>
+          <div class="cert-issuer" style="color:#60a5fa;">NTI</div>
+          <div class="cert-name">Python for Data Analysis</div>
+          <div class="cert-date">Mar 2026</div>
+          <span class="cert-tag"
+            style="background:rgba(96,165,250,0.08);color:#60a5fa;border:1px solid rgba(96,165,250,0.2);">Data
+            Analysis</span>
+          <div style="margin-top:14px;">
+            <a href="https://drive.google.com/file/d/1aLw2H1fKPZSpN0GQQnW-U1tcbxJScLGB/view" target="_blank"
+              rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;color:#60a5fa;text-decoration:none;opacity:0.85;transition:opacity 0.2s;"
+              onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+              <i class="fas fa-external-link-alt" style="font-size:0.65rem;"></i> View Certificate
+            </a>
+          </div>
+        </div>
+
+        <!-- .NET Coursera -->
+        <div class="cert-card">
+          <div class="cert-icon-wrap" style="background:rgba(129,140,248,0.10);">
+            <i class="fas fa-graduation-cap" style="color:#818cf8;" aria-hidden="true"></i>
+          </div>
+          <div class="cert-issuer" style="color:#818cf8;">Coursera</div>
+          <div class="cert-name">Backend Development — .NET Full Stack</div>
+          <div class="cert-date">Sep 2023</div>
+          <span class="cert-tag"
+            style="background:rgba(129,140,248,0.08);color:#818cf8;border:1px solid rgba(129,140,248,0.2);">.NET</span>
+          <div style="margin-top:14px;">
+            <a href="https://www.coursera.org/account/accomplishments/verify/PWXC7YLVN463" target="_blank"
+              rel="noopener noreferrer"
+              style="display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;color:#818cf8;text-decoration:none;opacity:0.85;transition:opacity 0.2s;"
+              onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.85'">
+              <i class="fas fa-external-link-alt" style="font-size:0.65rem;"></i> Verify Certificate
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mentorship -->
+      <h3 class="about-subsection-title reveal" style="margin-top:56px;margin-bottom:24px;">Mentorship</h3>
+      <div class="internship-grid reveal-stagger">
+        <div class="cert-card">
+          <div class="cert-icon-wrap" style="background:rgba(52,211,153,0.10);">
+            <i class="fas fa-user-tie" style="color:#34d399;" aria-hidden="true"></i>
+          </div>
+          <div class="cert-issuer" style="color:#34d399;">
+            <a href="https://www.linkedin.com/company/deloitte/" target="_blank" rel="noopener noreferrer"
+              style="color:inherit;text-decoration:none;">Deloitte</a>
+          </div>
+          <div class="cert-name">Data Engineering Mentorship</div>
+          <div class="cert-date">
+            Mentor:
+            <a href="https://www.linkedin.com/in/mohamed-nasr-349289148/" target="_blank" rel="noopener noreferrer"
+              style="color:var(--text-secondary);text-decoration:none;">Eng. Mohamed Nasr</a>
+          </div>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);margin-top:10px;line-height:1.55;">
+            Completed a structured Data Engineering mentorship program, gaining industry
+            insights and practical guidance on distributed systems and data platform design.
+          </p>
+        </div>
+      </div>
+
+      <!-- Volunteering -->
+      <h3 class="about-subsection-title reveal" style="margin-top:48px;margin-bottom:24px;">Volunteering</h3>
+      <div class="internship-grid reveal-stagger">
+        <div class="cert-card">
+          <div class="cert-icon-wrap" style="background:rgba(248,113,113,0.10);">
+            <i class="fas fa-heart" style="color:#f87171;" aria-hidden="true"></i>
+          </div>
+          <div class="cert-issuer" style="color:#f87171;">Egyptian Red Crescent</div>
+          <div class="cert-name">Data Management Specialist</div>
+          <div class="cert-date">Jul 2026 – Present &nbsp;·&nbsp; Health / Humanitarian</div>
+          <p style="font-size:0.8125rem;color:var(--text-secondary);margin-top:10px;line-height:1.55;">
+            Volunteering to support health data workflows and information systems for
+            humanitarian operations.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════════════════ -->
+  <section id="contact" class="bg-alt">
+    <div class="container">
+
+      <header class="section-header reveal">
+        <span class="section-label">Contact</span>
+        <h2 class="section-heading">Let's Work Together</h2>
+        <span class="divider-line" aria-hidden="true"></span>
+        <p class="section-sub">
+          Have a data engineering challenge or an opportunity to discuss?
+          I'd be glad to connect.
+        </p>
+      </header>
+
+      <div class="contact-wrap reveal">
+
+        <!-- Contact info card -->
+        <div class="contact-card">
+          <h3 style="font-size:1.125rem;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Contact
+            Information</h3>
+          <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:8px;">Giza, Egypt</p>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:ahmedhassansaad7@gmail.com" class="contact-value" id="contact-email">
+                ahmedhassansaad7@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <p class="contact-label">Phone</p>
+              <a href="tel:+201022624475" class="contact-value" id="contact-phone">
+                +20 102 262 4475
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <p class="contact-label">Location</p>
+              <span class="contact-value">Giza, Egypt</span>
+            </div>
+          </div>
+
+          <p class="contact-socials-heading">Connect on</p>
+          <div class="social-row">
+            <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer" class="social-btn"
+              id="contact-github" aria-label="GitHub profile">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/ahmed-hassan-dataeng/" target="_blank" rel="noopener noreferrer"
+              class="social-btn" id="contact-linkedin" aria-label="LinkedIn profile">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Availability card -->
+        <div class="availability-card">
+          <div class="availability-status">
+            <span class="avail-dot" aria-hidden="true"></span>
+            Available for new opportunities
+          </div>
+          <h3 class="availability-heading">
+            Open to data engineering roles and consulting projects
+          </h3>
+          <p class="availability-desc">
+            I'm interested in full-time data engineering positions, contract work on
+            data platform projects, and collaborations involving real-time pipelines,
+            lakehouse architecture, or analytics infrastructure.
+          </p>
+          <a href="mailto:ahmedhassansaad7@gmail.com" class="btn-primary" id="contact-cta-email"
+            style="display:inline-flex;margin-top:4px;">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            Send Me an Email
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <span class="footer-brand gradient-text">AHMED HASSAN</span>
+          <p class="footer-copy" style="margin-top:4px;">Data Engineer · Giza, Egypt</p>
+        </div>
+
+        <p class="footer-copy">© 2026 Ahmed Hassan. All rights reserved.</p>
+
+        <div class="footer-links">
+          <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer" class="footer-link"
+            aria-label="GitHub profile">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ahmed-hassan-dataeng/" target="_blank" rel="noopener noreferrer"
+            class="footer-link" aria-label="LinkedIn profile">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:ahmedhassansaad7@gmail.com" class="footer-link" aria-label="Send email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
