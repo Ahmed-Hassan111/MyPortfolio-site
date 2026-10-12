@@ -3,1225 +3,996 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmed Hassan | Data Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!-- Your custom CSS -->
+    <title>Ahmed Hassan | Data Engineer — Real-Time Pipelines & Lakehouse Architectures</title>
+    <meta name="description" content="Ahmed Hassan is a Data Engineer specializing in real-time CDC pipelines, AI-Native Lakehouse architectures, and end-to-end ETL/ELT workflows using Apache Flink, Spark, Kafka, ClickHouse, and dbt." />
+    <!-- Favicon placeholder using emoji -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="grid-pattern">
-    <!-- Navigation -->
-    <nav
-      class="fixed w-full z-50 bg-opacity-80 backdrop-blur-md bg-gray-900 border-b border-gray-800"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16 items-center">
-          <div class="flex-shrink-0 flex items-center">
-            <span class="text-xl font-bold gradient-text">AHMED HASSAN</span>
-          </div>
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-8">
-              <a
-                href="#home"
-                class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >Home</a
-              >
-              <a
-                href="#about"
-                class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >About</a
-              >
-              <a
-                href="#skills"
-                class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >Skills</a
-              >
-              <a
-                href="#certifications"
-                class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >Certifications</a
-              >
-              <a
-                href="#work"
-                class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >Work</a
-              >
-              <a
-                href="#contact"
-                class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >Contact</a
-              >
-            </div>
-          </div>
-          <div class="md:hidden">
-            <button
-              id="menu-toggle"
-              class="text-gray-300 hover:text-white focus:outline-none"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+  <body>
 
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-gray-900 bg-opacity-95">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="#home"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
-            >About</a
-          >
-          <a
-            href="#skills"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
-            >Skills</a
-          >
-          <a
-            href="#certifications"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
-            >Certifications</a
-          >
-          <a
-            href="#work"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
-            >Work</a
-          >
-          <a
-            href="#contact"
-            class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800"
-            >Contact</a
-          >
+    <!-- ══════════════════════════════════════════════════════
+         NAVIGATION
+    ═══════════════════════════════════════════════════════ -->
+    <nav class="nav" id="main-nav" role="navigation" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <!-- Brand -->
+          <a href="#home" class="nav-brand" aria-label="Ahmed Hassan - home">
+            <span class="nav-brand-dot" aria-hidden="true"></span>
+            AHMED HASSAN
+          </a>
+
+          <!-- Desktop links -->
+          <ul class="nav-links" role="list">
+            <li><a href="#home"           class="nav-link active" id="nav-home">Home</a></li>
+            <li><a href="#about"          class="nav-link"        id="nav-about">About</a></li>
+            <li><a href="#skills"         class="nav-link"        id="nav-skills">Skills</a></li>
+            <li><a href="#projects"       class="nav-link"        id="nav-projects">Projects</a></li>
+            <li><a href="#certifications" class="nav-link"        id="nav-certs">Credentials</a></li>
+            <li><a href="#contact"        class="nav-link"        id="nav-contact">Contact</a></li>
+          </ul>
+
+          <a href="#contact" class="nav-cta" aria-label="Get in touch">Get in Touch</a>
+
+          <!-- Hamburger -->
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-mobile">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section
-      id="home"
-      class="hero-pattern min-h-screen flex items-center justify-center relative overflow-hidden pt-16"
-    >
-      <div class="absolute top-0 left-0 w-full h-full z-0 opacity-20">
-        <div
-          class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-500 mix-blend-screen filter blur-3xl opacity-70"
-        ></div>
-        <div
-          class="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-indigo-500 mix-blend-screen filter blur-3xl opacity-70"
-        ></div>
-        <div
-          class="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-pink-500 mix-blend-screen filter blur-3xl opacity-70"
-        ></div>
+    <!-- Mobile drawer -->
+    <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+      <ul class="nav-mobile-links" role="list">
+        <li><a href="#home"           id="mobile-nav-home">Home</a></li>
+        <li><a href="#about"          id="mobile-nav-about">About</a></li>
+        <li><a href="#skills"         id="mobile-nav-skills">Skills</a></li>
+        <li><a href="#projects"       id="mobile-nav-projects">Projects</a></li>
+        <li><a href="#certifications" id="mobile-nav-certs">Credentials</a></li>
+        <li><a href="#contact"        id="mobile-nav-contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════ -->
+    <section id="home" class="hero">
+      <div class="hero-bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
       </div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-        <div class="flex flex-col md:flex-row items-center justify-between">
-          <div class="md:w-1/2 mb-10 md:mb-0">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">
-              <span class="gradient-text">I'm Ahmed Hassan</span><br />
-              Data Engineer
-            </h1>
-            <p class="text-lg text-gray-300 mb-8 max-w-lg">
-              Data Engineer with hands-on experience building real-time CDC pipelines,
-              AI-Native Lakehouse architectures, and end-to-end ETL/ELT workflows.
-              Proficient in Apache Flink, Spark, Kafka, ClickHouse, MinIO, Airflow, and dbt.
-              Currently working at Bassirah and advancing in the ITI Data Engineering Program.
+      <div class="container">
+        <div class="hero-content">
+
+          <!-- Text -->
+          <div class="hero-text">
+            <div class="hero-eyebrow">
+              <span class="hero-status-dot" aria-hidden="true"></span>
+              <span class="hero-status-text">Available for new opportunities</span>
+            </div>
+
+            <h1 class="hero-name gradient-text">Ahmed Hassan</h1>
+
+            <p class="hero-title">
+              <strong>Data Engineer</strong> — Real-Time Pipelines &amp; Lakehouse Systems
             </p>
-            <div class="flex space-x-4">
-              <a
-                href="#work"
-                class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full text-white font-medium hover:opacity-90 transition-all transform hover:scale-105 shadow-lg"
-              >
-                View My Work
+
+            <p class="hero-desc">
+              I design and build the data infrastructure that organizations rely on —
+              real-time CDC pipelines, AI-Native Lakehouse architectures, and scalable
+              ETL/ELT workflows. Currently engineering data systems at Bassirah using
+              Apache Flink, Spark, Kafka, ClickHouse, and dbt.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary" id="hero-cta-projects">
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+                Explore My Projects
               </a>
-              <a
-                href="#contact"
-                class="px-6 py-3 border border-gray-600 rounded-full text-white font-medium hover:bg-gray-800 transition-all transform hover:scale-105"
-              >
-                Contact Me
+              <a href="#contact" class="btn-secondary" id="hero-cta-contact">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                Get in Touch
               </a>
             </div>
-          </div>
-          <div class="md:w-1/2 relative">
-            <div class="relative w-full max-w-md mx-auto">
-              <div
-                class="absolute -top-10 -left-10 w-32 h-32 bg-purple-500 rounded-full filter blur-xl opacity-30"
-              ></div>
-              <div
-                class="absolute -bottom-10 -right-10 w-40 h-40 bg-indigo-500 rounded-full filter blur-xl opacity-30"
-              ></div>
-              <img
-                src="assets/IMG-INTER.jpg"
-                alt="Personal Image"
-                class="relative z-15 rounded-2xl shadow-2xl floating border-2 border-gray-700 img-right"
-              />
+
+            <div class="hero-socials">
+              <span class="hero-social-label">Find me on</span>
+              <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer"
+                 class="hero-social-link" id="hero-github" aria-label="GitHub profile">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/ahmed-hassan-dataeng/" target="_blank" rel="noopener noreferrer"
+                 class="hero-social-link" id="hero-linkedin" aria-label="LinkedIn profile">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <!-- Pipeline visual -->
+            <div class="pipeline-mini" aria-label="Data pipeline stages: Ingest, Stream, Transform, Store, Analyze">
+              <span class="pipe-step">Ingest</span>
+              <span class="pipe-arrow" aria-hidden="true">→</span>
+              <span class="pipe-step">Stream</span>
+              <span class="pipe-arrow" aria-hidden="true">→</span>
+              <span class="pipe-step">Transform</span>
+              <span class="pipe-arrow" aria-hidden="true">→</span>
+              <span class="pipe-step">Store</span>
+              <span class="pipe-arrow" aria-hidden="true">→</span>
+              <span class="pipe-step">Analyze</span>
             </div>
           </div>
+
+          <!-- Portrait -->
+          <div class="hero-image-wrap" aria-hidden="true">
+            <div class="hero-image-ring"></div>
+            <div class="hero-image-card">
+              <img src="assets/me.jpeg" alt="Ahmed Hassan — Data Engineer" />
+            </div>
+
+            <!-- Floating badge: certs -->
+            <div class="hero-badge bottom-left">
+              <div class="hero-badge-icon">
+                <i class="fas fa-certificate" aria-hidden="true"></i>
+              </div>
+              <div class="hero-badge-text">
+                <strong>DP-700 Certified</strong>
+                <span>Microsoft Fabric</span>
+              </div>
+            </div>
+
+            <!-- Floating badge: stack -->
+            <div class="hero-badge top-right">
+              <div class="hero-badge-icon purple">
+                <i class="fas fa-bolt" aria-hidden="true"></i>
+              </div>
+              <div class="hero-badge-text">
+                <strong>Flink · Kafka · Spark</strong>
+                <span>Real-time data stack</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div
-        class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-down"
-      >
-        <a href="#about" class="text-gray-300 hover:text-white">
-          <i class="fas fa-chevron-down text-2xl"></i>
-        </a>
-      </div>
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </a>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-900 bg-opacity-70">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            <span class="gradient-text">About Me</span>
-          </h2>
-          <div
-            class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-6"
-          ></div>
-          <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-            Data Engineer with hands-on experience building real-time CDC pipelines,
-            AI-Native Lakehouse architectures (Bronze-Silver-Gold), and scalable
-            ETL/ELT workflows using Apache Flink, Spark, Kafka, ClickHouse, MinIO AIStore,
-            dbt, and Airflow. Currently working at Bassirah and completing the ITI Data Engineering Program.
-          </p>
-        </div>
+    <!-- ══════════════════════════════════════════════════════
+         ABOUT
+    ═══════════════════════════════════════════════════════ -->
+    <section id="about" class="bg-alt">
+      <div class="container">
 
-        <div class="flex flex-col md:flex-row items-center gap-12">
-          <div class="md:w-1/3 relative">
-            <div class="relative w-full max-w-xs mx-auto">
-              <div
-                class="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-75"
-              ></div>
-              <img
-                src="assets/me.jpeg"
-                alt="Designer portrait"
-                class="relative z-10 rounded-xl w-full border-2 border-gray-700"
-              />
+        <header class="section-header reveal">
+          <span class="section-label">About Me</span>
+          <h2 class="section-heading">Turning Raw Data into Reliable Infrastructure</h2>
+          <span class="divider-line" aria-hidden="true"></span>
+          <p class="section-sub">
+            Data Engineer with hands-on experience building the pipelines, lakes,
+            and platforms that power modern analytics.
+          </p>
+        </header>
+
+        <div class="about-grid reveal">
+
+          <!-- Portrait + stats -->
+          <div>
+            <div class="about-portrait-frame">
+              <img src="assets/me.jpeg" alt="Ahmed Hassan portrait" />
+            </div>
+            <div class="about-stats" aria-label="Key stats">
+              <div class="about-stat">
+                <span class="about-stat-value">1+</span>
+                <span class="about-stat-label">Years in Data Eng.</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-value">10+</span>
+                <span class="about-stat-label">Data Projects</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-value">6+</span>
+                <span class="about-stat-label">Certifications</span>
+              </div>
+              <div class="about-stat">
+                <span class="about-stat-value">ERC</span>
+                <span class="about-stat-label">Volunteer</span>
+              </div>
             </div>
           </div>
 
-          <div class="md:w-2/3">
-            <h3 class="text-2xl font-bold mb-6">
-              Turning Raw Data into Decisions That Matter
-            </h3>
-            <p class="text-gray-300 mb-6">
-              Data Engineer building real-time CDC pipelines and AI-Native Lakehouse
-              architectures. Skilled in Apache Flink, Spark, Kafka, ClickHouse, MinIO AIStore,
-              dbt, Airflow, Python, and SQL. Certified in Microsoft Fabric (DP-700) and ClickHouse.
-              Currently working at Bassirah and completing the ITI Data Engineering Program.
+          <!-- Right column -->
+          <div class="about-body">
+            <p>
+              I build data systems that are reliable, observable, and built to scale.
+              My core focus is on real-time change-data-capture pipelines, AI-Native
+              Lakehouse architectures (Bronze → Silver → Gold), and batch ETL/ELT
+              workflows. I'm currently working full-time at Bassirah as a Data Engineer
+              and completing the ITI Data Engineering Program.
+            </p>
+            <p>
+              My background spans data engineering, backend software development, and
+              a degree in Computer &amp; Artificial Intelligence (Medical Informatics),
+              giving me a solid foundation across both data systems and software
+              engineering. I'm certified in Microsoft Fabric (DP-700) and ClickHouse,
+              and hold two AWS Academy credentials in Data Engineering and Cloud Foundations.
             </p>
 
-            <h4 class="text-xl font-bold mb-3 mt-6">Experience</h4>
-            <div class="space-y-4 mb-6">
+            <!-- Experience timeline -->
+            <div class="about-subsection">
+              <p class="about-subsection-title">Professional Experience</p>
+              <ol class="timeline" aria-label="Work experience timeline">
 
-              <!-- Bassirah -->
-              <div class="border-l-2 border-cyan-400 pl-4">
-                <h5 class="font-bold">Data Engineer – Bassirah</h5>
-                <p class="text-sm text-gray-400">Aug 2026 – Present &nbsp;·&nbsp; Full-Time</p>
-                <ul class="text-gray-300 mt-2 space-y-1 text-sm list-disc list-inside">
-                  <li>Built an AI-Native Lakehouse on MinIO AIStore Enterprise using Apache Iceberg tables (Bronze → Silver → Gold medallion layers).</li>
-                  <li>Engineered real-time CDC pipelines with Apache Flink &amp; Kafka ingesting transaction logs at sub-second latency.</li>
-                  <li>Developed batch ETL/ELT workflows using Apache Spark, dbt, and Airflow for scheduled data transformation.</li>
-                  <li>Delivered real-time OLAP analytics via ClickHouse and federated SQL queries through Trino.</li>
-                </ul>
-              </div>
+                <li class="timeline-item">
+                  <div class="timeline-dot" aria-hidden="true"></div>
+                  <div class="timeline-role">Data Engineer</div>
+                  <div class="timeline-company">Bassirah</div>
+                  <div class="timeline-meta">
+                    <span class="timeline-date">Aug 2026 – Present</span>
+                    <span class="badge-type">Full-Time</span>
+                  </div>
+                  <ul class="timeline-bullets">
+                    <li>Built an AI-Native Lakehouse on MinIO AIStore Enterprise with Apache Iceberg tables across Bronze, Silver, and Gold medallion layers.</li>
+                    <li>Engineered real-time CDC pipelines with Apache Flink and Kafka ingesting transaction logs at sub-second latency.</li>
+                    <li>Developed batch ETL/ELT workflows using Apache Spark, dbt, and Airflow for scheduled data transformation.</li>
+                    <li>Delivered real-time OLAP analytics via ClickHouse and federated SQL queries through Trino.</li>
+                  </ul>
+                </li>
 
-              <div class="border-l-2 border-purple-500 pl-4">
-                <h5 class="font-bold">Data Engineering Trainee – ITI</h5>
-                <p class="text-sm text-gray-400">Jan 2026 – Present</p>
-                <p class="text-gray-300 mt-1">
-                  Advancing Big Data and distributed systems expertise. Projects
-                  include: Examination System Database, Data Analysis, and
-                  Dockerized Data Analytics.
-                </p>
-              </div>
+                <li class="timeline-item">
+                  <div class="timeline-dot purple" aria-hidden="true"></div>
+                  <div class="timeline-role">Data Engineering Trainee</div>
+                  <div class="timeline-company">ITI — Information Technology Institute</div>
+                  <div class="timeline-meta">
+                    <span class="timeline-date">Jan 2026 – Present</span>
+                    <span class="badge-type">Training Program</span>
+                  </div>
+                  <p class="timeline-desc">
+                    Advancing Big Data and distributed systems expertise. Projects include
+                    an Examination System Database, Python Data Analysis, and a
+                    Dockerized Data Analytics platform.
+                  </p>
+                </li>
 
-              <div class="border-l-2 border-indigo-500 pl-4">
-                <h5 class="font-bold">Software Engineer: TrendLine</h5>
-                <p class="text-sm text-gray-400">
-                  June 2025 – Present &nbsp;·&nbsp; Freelance
-                </p>
-                <p class="text-gray-300 mt-1">
-                  Built and deployed three client-facing web applications with
-                  ASP.NET Core and Angular, cutting development time by 20% and
-                  increasing user adoption.
-                </p>
-              </div>
+                <li class="timeline-item">
+                  <div class="timeline-dot orange" aria-hidden="true"></div>
+                  <div class="timeline-role">Software Engineer</div>
+                  <div class="timeline-company">TrendLine</div>
+                  <div class="timeline-meta">
+                    <span class="timeline-date">Jun 2025 – Present</span>
+                    <span class="badge-type">Freelance</span>
+                  </div>
+                  <p class="timeline-desc">
+                    Built and deployed three client-facing web applications with
+                    ASP.NET Core and Angular.
+                  </p>
+                </li>
 
-              <!-- <div class="border-l-2 border-blue-500 pl-4">
-                <h5 class="font-bold">AI Engineer: Skarpt</h5>
-                <p class="text-sm text-gray-400">
-                  Feb 2025 – May 2025 &nbsp;·&nbsp; R&amp;D Internship
-                </p>
-                <p class="text-gray-300 mt-1">
-                  Developed computer-vision models achieving 90% accuracy in PPE
-                  detection for safety compliance.
-                </p>
-              </div> -->
+                <li class="timeline-item">
+                  <div class="timeline-dot pink" aria-hidden="true"></div>
+                  <div class="timeline-role">Software Engineer</div>
+                  <div class="timeline-company">Techno Management</div>
+                  <div class="timeline-meta">
+                    <span class="timeline-date">Mar 2024 – Jan 2025</span>
+                    <span class="badge-type">Full-Time</span>
+                  </div>
+                  <p class="timeline-desc">
+                    Developed scalable .NET solutions (MVC &amp; Web APIs) for government
+                    and private sectors. Built SharePoint web parts with SQL Server and
+                    created Power BI dashboards with SSRS reports.
+                  </p>
+                </li>
 
-              <div class="border-l-2 border-pink-500 pl-4">
-                <h5 class="font-bold">Software Engineer: Techno Management</h5>
-                <p class="text-sm text-gray-400">
-                  Mar 2024 – Jan 2025 &nbsp;·&nbsp; Full-Time
-                </p>
-                <p class="text-gray-300 mt-1">
-                  Developed scalable .NET solutions (MVC &amp; Web APIs) for
-                  government and private sectors. Built SharePoint web parts
-                  with SQL Server and created Power BI dashboards with SSRS
-                  reports.
-                </p>
-              </div>
+                <li class="timeline-item">
+                  <div class="timeline-dot amber" aria-hidden="true"></div>
+                  <div class="timeline-role">Coding Instructor</div>
+                  <div class="timeline-company">iSchool</div>
+                  <div class="timeline-meta">
+                    <span class="timeline-date">Mar 2024 – May 2024</span>
+                    <span class="badge-type">Part-Time</span>
+                  </div>
+                  <p class="timeline-desc">
+                    Taught 2D game development using Godot Engine and GDScript to students.
+                  </p>
+                </li>
 
-              <div class="border-l-2 border-yellow-500 pl-4">
-                <h5 class="font-bold">Coding Instructor: iSchool</h5>
-                <p class="text-sm text-gray-400">
-                  Mar 2024 – May 2024 &nbsp;·&nbsp; Part-Time
-                </p>
-                <p class="text-gray-300 mt-1">
-                  Taught 2D game development using Godot Engine and GDScript to
-                  students.
-                </p>
-              </div>
+              </ol>
+            </div>
+
+            <!-- Education -->
+            <div class="about-subsection">
+              <p class="about-subsection-title">Education</p>
+              <ol class="timeline" aria-label="Education">
+                <li class="timeline-item">
+                  <div class="timeline-dot green" aria-hidden="true"></div>
+                  <div class="timeline-role">B.Sc. in Computer &amp; Artificial Intelligence</div>
+                  <div class="timeline-company">Helwan University</div>
+                  <div class="timeline-meta">
+                    <span class="timeline-date">2019 – 2023</span>
+                    <span class="badge-type">Grade: Very Good</span>
+                  </div>
+                  <p class="timeline-desc">CS — Medical Informatics Department</p>
+                </li>
+              </ol>
             </div>
 
             <!-- Mentorship -->
-            <h4 class="text-xl font-bold mb-3 mt-6">Mentorship</h4>
-            <div class="border-l-2 border-emerald-400 pl-4 mb-6">
-              <h5 class="font-bold">Data Engineering Mentorship – Deloitte</h5>
-              <p class="text-sm text-gray-400">Mentor: Eng. Mohamed Nasr</p>
-              <p class="text-gray-300 mt-1">
-                Grateful to have completed a Data Engineering mentorship program with
-                <a href="https://www.linkedin.com/company/deloitte/" target="_blank" class="text-emerald-400 hover:underline">Deloitte</a>.
-                Special thanks to
-                <a href="https://www.linkedin.com/in/mohamed-nasr-349289148/" target="_blank" class="text-emerald-400 hover:underline">Eng. Mohamed Nasr</a>
-                for his time, mentorship, and invaluable industry insights.
-              </p>
+            <div class="about-subsection">
+              <p class="about-subsection-title">Mentorship</p>
+              <ol class="timeline" aria-label="Mentorship">
+                <li class="timeline-item">
+                  <div class="timeline-dot emerald" aria-hidden="true"></div>
+                  <div class="timeline-role">Data Engineering Mentorship</div>
+                  <div class="timeline-company">
+                    <a href="https://www.linkedin.com/company/deloitte/" target="_blank" rel="noopener noreferrer"
+                       style="color:var(--accent-1);text-decoration:none;">Deloitte</a>
+                  </div>
+                  <div class="timeline-meta">
+                    <span class="timeline-date">Mentor: <a href="https://www.linkedin.com/in/mohamed-nasr-349289148/" target="_blank" rel="noopener noreferrer" style="color:var(--text-secondary)">Eng. Mohamed Nasr</a></span>
+                  </div>
+                  <p class="timeline-desc">
+                    Completed a structured Data Engineering mentorship program, gaining
+                    industry insights and practical guidance on distributed systems and
+                    data platform design.
+                  </p>
+                </li>
+              </ol>
             </div>
 
             <!-- Volunteering -->
-            <h4 class="text-xl font-bold mb-3">Volunteering</h4>
-            <div class="border-l-2 border-red-400 pl-4 mb-6">
-              <h5 class="font-bold">Data Management Specialist – Egyptian Red Crescent</h5>
-              <p class="text-sm text-gray-400">Jul 2026 – Present &nbsp;·&nbsp; Health</p>
-              <p class="text-gray-300 mt-1">
-                Volunteering as a Data Management Specialist, supporting health data workflows
-                and information systems for humanitarian operations.
-              </p>
+            <div class="about-subsection">
+              <p class="about-subsection-title">Volunteering</p>
+              <ol class="timeline" aria-label="Volunteering">
+                <li class="timeline-item">
+                  <div class="timeline-dot red" aria-hidden="true"></div>
+                  <div class="timeline-role">Data Management Specialist</div>
+                  <div class="timeline-company">Egyptian Red Crescent</div>
+                  <div class="timeline-meta">
+                    <span class="timeline-date">Jul 2026 – Present</span>
+                    <span class="badge-type">Health / Humanitarian</span>
+                  </div>
+                  <p class="timeline-desc">
+                    Supporting health data workflows and information systems for
+                    humanitarian operations.
+                  </p>
+                </li>
+              </ol>
             </div>
 
-            <h4 class="text-xl font-bold mb-3">Education</h4>
-            <div class="border-l-2 border-green-500 pl-4 mb-6">
-              <h5 class="font-bold">
-                BS in Computer &amp; Artificial Intelligence
-              </h5>
-              <p class="text-sm text-gray-400">
-                Helwan University | 2019 – 2023
-              </p>
-              <p class="text-gray-300 mt-1">
-                CS - Medical Informatics Department | Grade: Very Good
-              </p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-              <div
-                class="bg-gray-800 bg-opacity-50 p-4 rounded-lg border border-gray-700 hover:border-purple-500 transition-all"
-              >
-                <div class="text-purple-400 mb-2">
-                  <i class="fas fa-database text-2xl"></i>
-                </div>
-                <h4 class="font-bold mb-1">1+ Year</h4>
-                <p class="text-sm text-gray-300">Engineering Experience</p>
-              </div>
-              <div
-                class="bg-gray-800 bg-opacity-50 p-4 rounded-lg border border-gray-700 hover:border-indigo-500 transition-all"
-              >
-                <div class="text-indigo-400 mb-2">
-                  <i class="fas fa-project-diagram text-2xl"></i>
-                </div>
-                <h4 class="font-bold mb-1">10+</h4>
-                <p class="text-sm text-gray-300">Data Projects</p>
-              </div>
-              <div
-                class="bg-gray-800 bg-opacity-50 p-4 rounded-lg border border-gray-700 hover:border-cyan-500 transition-all"
-              >
-                <div class="text-cyan-400 mb-2">
-                  <i class="fas fa-certificate text-2xl"></i>
-                </div>
-                <h4 class="font-bold mb-1">6+</h4>
-                <p class="text-sm text-gray-300">Certifications</p>
-              </div>
-              <div
-                class="bg-gray-800 bg-opacity-50 p-4 rounded-lg border border-gray-700 hover:border-emerald-500 transition-all"
-              >
-                <div class="text-emerald-400 mb-2">
-                  <i class="fas fa-hands-helping text-2xl"></i>
-                </div>
-                <h4 class="font-bold mb-1">Volunteer</h4>
-                <p class="text-sm text-gray-300">Red Crescent</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-900 bg-opacity-70">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            <span class="gradient-text">My Skills</span>
-          </h2>
-          <div
-            class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-6"
-          ></div>
-          <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-            A robust data engineering skill set spanning ETL pipelines, Big Data
-            technologies, cloud platforms, and analytics — built to turn raw
-            data into actionable insights.
+    <!-- ══════════════════════════════════════════════════════
+         SKILLS
+    ═══════════════════════════════════════════════════════ -->
+    <section id="skills">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="section-label">Technical Skills</span>
+          <h2 class="section-heading">Core Competencies</h2>
+          <span class="divider-line" aria-hidden="true"></span>
+          <p class="section-sub">
+            A data engineering stack spanning stream processing, batch pipelines,
+            lakehouse storage, analytics, cloud infrastructure, and development tooling.
           </p>
-        </div>
+        </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Technical Expertise</h3>
+        <div class="skills-categories reveal-stagger">
 
-            <div class="space-y-6">
-              <div>
-                <div class="flex justify-between mb-2">
-                  <span class="font-medium">ETL &amp; Data Pipelines</span>
-                  <span class="text-gray-400">90%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 90%"></div>
-                </div>
+          <!-- Languages -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon purple">
+                <i class="fas fa-code" aria-hidden="true"></i>
               </div>
-
-              <div>
-                <div class="flex justify-between mb-2">
-                  <span class="font-medium"
-                    >Big Data (Spark / Kafka / Hadoop)</span
-                  >
-                  <span class="text-gray-400">80%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 80%"></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-2">
-                  <span class="font-medium">SQL &amp; Databases</span>
-                  <span class="text-gray-400">90%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 90%"></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-2">
-                  <span class="font-medium">Data Analytics &amp; BI</span>
-                  <span class="text-gray-400">85%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 85%"></div>
-                </div>
-              </div>
-
-              <div>
-                <div class="flex justify-between mb-2">
-                  <span class="font-medium"
-                    >Cloud &amp; DevOps (Docker / CI-CD)</span
-                  >
-                  <span class="text-gray-400">75%</span>
-                </div>
-                <div class="skill-bar">
-                  <div class="skill-progress" style="width: 75%"></div>
-                </div>
-              </div>
+              <span class="skill-category-title">Programming Languages</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">Scala</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">JavaScript</span>
             </div>
           </div>
 
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Technical Proficiency</h3>
-
-            <div class="flex flex-wrap gap-4">
-              <!-- Programming Languages -->
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fab fa-python text-2xl text-blue-500 mr-2"></i>
-                <span>Python</span>
+          <!-- Streaming & Batch -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon cyan">
+                <i class="fas fa-bolt" aria-hidden="true"></i>
               </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-code text-2xl text-yellow-500 mr-2"></i>
-                <span>C#</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fab fa-java text-2xl text-orange-500 mr-2"></i>
-                <span>Java</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fab fa-js text-2xl text-yellow-400 mr-2"></i>
-                <span>JavaScript</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-code text-2xl text-teal-400 mr-2"></i>
-                <span>Scala</span>
-              </div>
-
-              <!-- Big Data -->
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-bolt text-2xl text-orange-400 mr-2"></i>
-                <span>Apache Spark</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-stream text-2xl text-green-400 mr-2"></i>
-                <span>Apache Kafka</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-wind text-2xl text-cyan-400 mr-2"></i>
-                <span>Apache Airflow</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-server text-2xl text-yellow-600 mr-2"></i>
-                <span>Hadoop</span>
-              </div>
-
-              <!-- Databases -->
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-database text-2xl text-blue-300 mr-2"></i>
-                <span>SQL Server</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-database text-2xl text-indigo-400 mr-2"></i>
-                <span>PostgreSQL</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-database text-2xl text-orange-400 mr-2"></i>
-                <span>MySQL</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-database text-2xl text-green-500 mr-2"></i>
-                <span>MongoDB</span>
-              </div>
-
-              <!-- Cloud & DevOps -->
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fab fa-docker text-2xl text-blue-400 mr-2"></i>
-                <span>Docker</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fab fa-microsoft text-2xl text-blue-500 mr-2"></i>
-                <span>Azure</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fab fa-aws text-2xl text-orange-400 mr-2"></i>
-                <span>AWS</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fab fa-google text-2xl text-red-400 mr-2"></i>
-                <span>GCP</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-infinity text-2xl text-purple-400 mr-2"></i>
-                <span>CI/CD</span>
-              </div>
-
-              <!-- Analytics -->
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-chart-bar text-2xl text-blue-500 mr-2"></i>
-                <span>Power BI</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-file-excel text-2xl text-green-500 mr-2"></i>
-                <span>Excel</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-file-alt text-2xl text-red-400 mr-2"></i>
-                <span>SSRS Reports</span>
-              </div>
-
-              <!-- New Lakehouse Tools -->
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-bolt text-2xl text-cyan-400 mr-2"></i>
-                <span>Apache Flink</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-database text-2xl text-yellow-400 mr-2"></i>
-                <span>ClickHouse</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-hdd text-2xl text-blue-300 mr-2"></i>
-                <span>MinIO</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-cubes text-2xl text-orange-300 mr-2"></i>
-                <span>Apache Iceberg</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-layer-group text-2xl text-green-300 mr-2"></i>
-                <span>dbt</span>
-              </div>
-              <!-- Tools -->
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fab fa-git-alt text-2xl text-red-500 mr-2"></i>
-                <span>Git</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-server text-2xl text-gray-400 mr-2"></i>
-                <span>REST APIs</span>
-              </div>
+              <span class="skill-category-title">Stream &amp; Batch Processing</span>
             </div>
-
-            <!-- Languages Section -->
-            <h3 class="text-2xl font-bold mt-8 mb-6">Languages</h3>
-            <div class="flex flex-wrap gap-4">
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-language text-2xl text-green-500 mr-2"></i>
-                <span>Arabic - Native</span>
-              </div>
-              <div
-                class="flex items-center bg-gray-800 bg-opacity-50 px-4 py-3 rounded-lg border border-gray-700 hover:glow transition-all"
-              >
-                <i class="fas fa-language text-2xl text-blue-400 mr-2"></i>
-                <span>English - Professional Proficiency</span>
-              </div>
-            </div>
-
-            <h3 class="text-2xl font-bold mt-8 mb-6">
-              Data Engineering Process
-            </h3>
-
-            <div class="relative">
-              <div
-                class="absolute left-5 top-0 h-full w-0.5 bg-gradient-to-b from-indigo-500 to-purple-600"
-              ></div>
-
-              <div class="space-y-8 pl-10">
-                <div class="relative">
-                  <div
-                    class="absolute -left-10 top-1 w-5 h-5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center"
-                  >
-                    <div class="w-3 h-3 rounded-full bg-white"></div>
-                  </div>
-                  <h4 class="font-bold mb-2">
-                    Data Ingestion &amp; Collection
-                  </h4>
-                  <p class="text-gray-300">
-                    Designing robust pipelines to ingest data from diverse
-                    sources — APIs, databases, and streaming systems.
-                  </p>
-                </div>
-
-                <div class="relative">
-                  <div
-                    class="absolute -left-10 top-1 w-5 h-5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center"
-                  >
-                    <div class="w-3 h-3 rounded-full bg-white"></div>
-                  </div>
-                  <h4 class="font-bold mb-2">
-                    Data Cleaning &amp; Transformation
-                  </h4>
-                  <p class="text-gray-300">
-                    Applying ETL processes to clean, normalize, and enrich raw
-                    data for downstream consumption.
-                  </p>
-                </div>
-
-                <div class="relative">
-                  <div
-                    class="absolute -left-10 top-1 w-5 h-5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center"
-                  >
-                    <div class="w-3 h-3 rounded-full bg-white"></div>
-                  </div>
-                  <h4 class="font-bold mb-2">
-                    Data Modeling &amp; Warehousing
-                  </h4>
-                  <p class="text-gray-300">
-                    Building efficient data models and warehouses / data lakes
-                    to support analytics and reporting.
-                  </p>
-                </div>
-
-                <div class="relative">
-                  <div
-                    class="absolute -left-10 top-1 w-5 h-5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center"
-                  >
-                    <div class="w-3 h-3 rounded-full bg-white"></div>
-                  </div>
-                  <h4 class="font-bold mb-2">
-                    Analytics &amp; Insights Delivery
-                  </h4>
-                  <p class="text-gray-300">
-                    Delivering actionable insights through dashboards, reports,
-                    and data storytelling using Power BI and SQL.
-                  </p>
-                </div>
-              </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Apache Flink</span>
+              <span class="skill-tag">Apache Spark</span>
+              <span class="skill-tag">Apache Kafka</span>
+              <span class="skill-tag">Hadoop</span>
+              <span class="skill-tag">CDC Pipelines</span>
             </div>
           </div>
+
+          <!-- Storage & Lakehouse -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon orange">
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+              </div>
+              <span class="skill-category-title">Storage &amp; Lakehouse</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">MinIO AIStore</span>
+              <span class="skill-tag">Apache Iceberg</span>
+              <span class="skill-tag">Snowflake</span>
+              <span class="skill-tag">Databricks</span>
+              <span class="skill-tag">Delta Lake</span>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon teal">
+                <i class="fas fa-database" aria-hidden="true"></i>
+              </div>
+              <span class="skill-category-title">Databases &amp; OLAP</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">ClickHouse</span>
+              <span class="skill-tag">SQL Server</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Trino</span>
+            </div>
+          </div>
+
+          <!-- Orchestration & Transformation -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon green">
+                <i class="fas fa-wind" aria-hidden="true"></i>
+              </div>
+              <span class="skill-category-title">Orchestration &amp; Transformation</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Apache Airflow</span>
+              <span class="skill-tag">dbt</span>
+              <span class="skill-tag">SSIS</span>
+              <span class="skill-tag">SSAS</span>
+              <span class="skill-tag">ETL/ELT Design</span>
+            </div>
+          </div>
+
+          <!-- Analytics & BI -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon amber">
+                <i class="fas fa-chart-bar" aria-hidden="true"></i>
+              </div>
+              <span class="skill-category-title">Analytics &amp; BI</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">SSRS</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">Matplotlib</span>
+              <span class="skill-tag">Seaborn</span>
+              <span class="skill-tag">Excel</span>
+            </div>
+          </div>
+
+          <!-- Cloud & DevOps -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon pink">
+                <i class="fas fa-cloud" aria-hidden="true"></i>
+              </div>
+              <span class="skill-category-title">Cloud &amp; Infrastructure</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Azure</span>
+              <span class="skill-tag">Microsoft Fabric</span>
+              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">CI/CD</span>
+            </div>
+          </div>
+
+          <!-- Dev Tools -->
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <div class="skill-cat-icon purple">
+                <i class="fas fa-tools" aria-hidden="true"></i>
+              </div>
+              <span class="skill-category-title">Development Tools</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">ASP.NET Core</span>
+              <span class="skill-tag">Angular</span>
+              <span class="skill-tag">SharePoint</span>
+            </div>
+          </div>
+
         </div>
+
+        <!-- Languages -->
+        <div class="lang-chips reveal" aria-label="Spoken languages">
+          <div class="lang-chip">
+            <i class="fas fa-globe" aria-hidden="true"></i>
+            Arabic
+            <span class="lang-chip-level">Native</span>
+          </div>
+          <div class="lang-chip">
+            <i class="fas fa-globe" aria-hidden="true"></i>
+            English
+            <span class="lang-chip-level">Professional Proficiency</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Certifications & Internships Section -->
-    <section id="certifications" class="py-20 bg-gray-900 bg-opacity-70">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            <span class="gradient-text">Certifications &amp; Internships</span>
-          </h2>
-          <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-6"></div>
-          <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-            Continuous learning through industry-recognized certifications and hands-on internship programs.
+    <!-- ══════════════════════════════════════════════════════
+         PROJECTS
+    ═══════════════════════════════════════════════════════ -->
+    <section id="projects" class="bg-alt">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="section-label">Selected Projects</span>
+          <h2 class="section-heading">Data Engineering Work</h2>
+          <span class="divider-line" aria-hidden="true"></span>
+          <p class="section-sub">
+            End-to-end projects spanning pipeline design, data modeling, lakehouse
+            architecture, and analytics delivery.
           </p>
+        </header>
+
+        <div class="projects-grid reveal-stagger">
+
+          <!-- Project 1: Netflix Data Pipeline -->
+          <article class="project-card" aria-label="Netflix End-to-End Data Pipeline project">
+            <div class="project-image">
+              <img src="assets/ARCHITECTURE DIAGRAM.png" alt="Architecture diagram showing the Netflix end-to-end data pipeline on AWS, Snowflake, and Databricks" />
+              <div class="project-image-overlay" aria-hidden="true"></div>
+              <div class="project-tech-row" aria-label="Technologies used">
+                <span class="project-tech-pill">AWS S3</span>
+                <span class="project-tech-pill">Snowflake</span>
+                <span class="project-tech-pill">Databricks</span>
+                <span class="project-tech-pill">dbt</span>
+                <span class="project-tech-pill">Power BI</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-objective">Modern Data Stack Pipeline</p>
+              <h3 class="project-title">Netflix End-to-End Data Pipeline</h3>
+              <p class="project-desc">
+                <strong>Objective:</strong> Process raw CSV movie/ratings data through a
+                full modern data stack into an analytical Power BI dashboard.<br><br>
+                <strong>Approach:</strong> Raw files land in AWS S3, are loaded into
+                Snowflake via a Databricks notebook, transformed and modeled with dbt
+                (fact/dimension tables), and surfaced through Power BI for reporting.<br><br>
+                <strong>Outcome:</strong> Demonstrates a complete cloud-native ELT workflow
+                from raw ingestion to business-ready analytics.
+              </p>
+              <div class="project-footer">
+                <a href="https://github.com/Ahmed-Hassan111/movielens-end-to-end-project.git"
+                   target="_blank" rel="noopener noreferrer"
+                   class="project-link" id="proj-netflix-github"
+                   aria-label="View Netflix pipeline on GitHub">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  View on GitHub
+                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Sales Data Warehouse -->
+          <article class="project-card" aria-label="ETL Sales Data Warehouse project">
+            <div class="project-image">
+              <img src="assets/SSIS-FactSales.png" alt="SSIS data flow diagram for the Sales Data Warehouse ETL pipeline" />
+              <div class="project-image-overlay" aria-hidden="true"></div>
+              <div class="project-tech-row" aria-label="Technologies used">
+                <span class="project-tech-pill">SSIS</span>
+                <span class="project-tech-pill">SQL Server</span>
+                <span class="project-tech-pill">SSAS</span>
+                <span class="project-tech-pill">Power BI</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-objective">Enterprise Data Warehouse</p>
+              <h3 class="project-title">ETL — Sales Data Warehouse</h3>
+              <p class="project-desc">
+                <strong>Objective:</strong> Build an enterprise-grade data warehouse to
+                support sales analytics, customer segmentation, and geographic demand reporting.<br><br>
+                <strong>Approach:</strong> Designed a Star Schema DW populated via SSIS
+                ETL pipelines from operational sources, with SSAS cubes for multidimensional
+                analysis and Power BI dashboards for business reporting.<br><br>
+                <strong>Outcome:</strong> A complete BI stack from raw transactional data
+                to interactive dashboards.
+              </p>
+              <div class="project-footer">
+                <a href="https://github.com/Ahmed-Hassan111/DWH_Project.git"
+                   target="_blank" rel="noopener noreferrer"
+                   class="project-link" id="proj-dwh-github"
+                   aria-label="View Sales DWH on GitHub">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  View on GitHub
+                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Examination DB -->
+          <article class="project-card" aria-label="Examination System Database project">
+            <div class="project-image">
+              <img src="assets/Diagram.png" alt="Entity-Relationship diagram for the examination system database" />
+              <div class="project-image-overlay" aria-hidden="true"></div>
+              <div class="project-tech-row" aria-label="Technologies used">
+                <span class="project-tech-pill">SQL Server</span>
+                <span class="project-tech-pill">SSMS</span>
+                <span class="project-tech-pill">Stored Procedures</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-objective">Database Design</p>
+              <h3 class="project-title">Examination System Database</h3>
+              <p class="project-desc">
+                <strong>Objective:</strong> Design a normalized relational database for an
+                academic examination platform handling large volumes of student records.<br><br>
+                <strong>Approach:</strong> Applied normalization principles, implemented
+                stored procedures for business logic, and applied indexing strategies
+                to optimize query performance for 10,000+ student records.<br><br>
+                <strong>Outcome:</strong> A maintainable, performant schema supporting
+                complex query patterns for exam management workflows.
+              </p>
+              <div class="project-footer">
+                <a href="https://github.com/Ahmed-Hassan111/DataBaseProject-ITI.git"
+                   target="_blank" rel="noopener noreferrer"
+                   class="project-link" id="proj-db-github"
+                   aria-label="View Database Project on GitHub">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  View on GitHub
+                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Data Analysis -->
+          <article class="project-card" aria-label="Python Data Analysis project">
+            <div class="project-image">
+              <img src="assets/Figure_5.png" alt="Data visualization chart from the Python data analysis pipeline" />
+              <div class="project-image-overlay" aria-hidden="true"></div>
+              <div class="project-tech-row" aria-label="Technologies used">
+                <span class="project-tech-pill">Python</span>
+                <span class="project-tech-pill">Pandas</span>
+                <span class="project-tech-pill">Matplotlib</span>
+                <span class="project-tech-pill">Seaborn</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <p class="project-objective">Data Analysis Pipeline</p>
+              <h3 class="project-title">Python Data Analysis Pipeline</h3>
+              <p class="project-desc">
+                <strong>Objective:</strong> Build an end-to-end data analysis workflow
+                covering ingestion through to visualization.<br><br>
+                <strong>Approach:</strong> Used Python and Pandas for data ingestion,
+                cleaning, and transformation; Matplotlib and Seaborn for exploratory
+                visualization.<br><br>
+                <strong>Outcome:</strong> A reproducible analysis pipeline demonstrating
+                core data wrangling and visualization competencies.
+              </p>
+              <div class="project-footer">
+                <a href="https://github.com/Ahmed-Hassan111/users-data-analysis-project-ITI.git"
+                   target="_blank" rel="noopener noreferrer"
+                   class="project-link" id="proj-analysis-github"
+                   aria-label="View Data Analysis project on GitHub">
+                  <i class="fab fa-github" aria-hidden="true"></i>
+                  View on GitHub
+                  <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
 
-        <!-- Certifications Grid -->
-        <h3 class="text-2xl font-bold mb-8 text-center">🏅 Certifications</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div class="reveal" style="text-align:center;margin-top:44px;">
+          <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer"
+             class="btn-secondary" id="all-projects-link">
+            <i class="fab fa-github" aria-hidden="true"></i>
+            View All Projects on GitHub
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CERTIFICATIONS & TRAINING
+    ═══════════════════════════════════════════════════════ -->
+    <section id="certifications">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="section-label">Credentials</span>
+          <h2 class="section-heading">Certifications &amp; Training</h2>
+          <span class="divider-line" aria-hidden="true"></span>
+          <p class="section-sub">
+            Industry certifications and structured training programs that complement
+            hands-on engineering experience.
+          </p>
+        </header>
+
+        <!-- Certifications -->
+        <h3 class="about-subsection-title reveal" style="margin-bottom:24px;">Certifications</h3>
+        <div class="certs-grid reveal-stagger">
 
           <!-- DP-700 -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-blue-500 transition-all hover:shadow-lg hover:shadow-blue-500/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-blue-500 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fab fa-microsoft text-blue-400 text-2xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Microsoft</span>
-                <h4 class="font-bold text-white">Fabric Data Engineer Associate</h4>
-              </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(56,189,248,0.10);">
+              <i class="fab fa-microsoft" style="color:#38bdf8;" aria-hidden="true"></i>
             </div>
-            <p class="text-gray-400 text-sm">DP-700 · July 2026</p>
-            <div class="mt-3 inline-block px-3 py-1 bg-blue-500 bg-opacity-20 text-blue-400 text-xs font-semibold rounded-full">Microsoft Fabric</div>
+            <div class="cert-issuer" style="color:#38bdf8;">Microsoft</div>
+            <div class="cert-name">Fabric Data Engineer Associate</div>
+            <div class="cert-date">DP-700 &nbsp;·&nbsp; July 2026</div>
+            <span class="cert-tag" style="background:rgba(56,189,248,0.08);color:#38bdf8;border:1px solid rgba(56,189,248,0.2);">Microsoft Fabric</span>
           </div>
 
           <!-- ClickHouse -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-yellow-500 transition-all hover:shadow-lg hover:shadow-yellow-500/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-yellow-500 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fas fa-database text-yellow-400 text-2xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-semibold text-yellow-400 uppercase tracking-wider">ClickHouse</span>
-                <h4 class="font-bold text-white">ClickHouse Certified Developer</h4>
-              </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(251,191,36,0.10);">
+              <i class="fas fa-database" style="color:#fbbf24;" aria-hidden="true"></i>
             </div>
-            <p class="text-gray-400 text-sm">Aug 2026</p>
-            <div class="mt-3 inline-block px-3 py-1 bg-yellow-500 bg-opacity-20 text-yellow-400 text-xs font-semibold rounded-full">OLAP Analytics</div>
+            <div class="cert-issuer" style="color:#fbbf24;">ClickHouse</div>
+            <div class="cert-name">ClickHouse Certified Developer</div>
+            <div class="cert-date">Aug 2026</div>
+            <span class="cert-tag" style="background:rgba(251,191,36,0.08);color:#fbbf24;border:1px solid rgba(251,191,36,0.2);">OLAP Analytics</span>
           </div>
 
           <!-- AWS Data Engineering -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-orange-500 transition-all hover:shadow-lg hover:shadow-orange-500/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-orange-500 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fab fa-aws text-orange-400 text-2xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-semibold text-orange-400 uppercase tracking-wider">AWS Academy</span>
-                <h4 class="font-bold text-white">AWS Academy Graduate – Data Engineering</h4>
-              </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(251,146,60,0.10);">
+              <i class="fab fa-aws" style="color:#fb923c;" aria-hidden="true"></i>
             </div>
-            <p class="text-gray-400 text-sm">May 2026</p>
-            <div class="mt-3 inline-block px-3 py-1 bg-orange-500 bg-opacity-20 text-orange-400 text-xs font-semibold rounded-full">Cloud Data</div>
+            <div class="cert-issuer" style="color:#fb923c;">AWS Academy</div>
+            <div class="cert-name">AWS Academy Graduate — Data Engineering</div>
+            <div class="cert-date">May 2026</div>
+            <span class="cert-tag" style="background:rgba(251,146,60,0.08);color:#fb923c;border:1px solid rgba(251,146,60,0.2);">Cloud Data</span>
           </div>
 
           <!-- AWS Cloud Foundations -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-orange-400 transition-all hover:shadow-lg hover:shadow-orange-400/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-orange-400 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fab fa-aws text-orange-300 text-2xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-semibold text-orange-300 uppercase tracking-wider">AWS Academy</span>
-                <h4 class="font-bold text-white">AWS Academy Graduate – Cloud Foundations</h4>
-              </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(251,146,60,0.08);">
+              <i class="fab fa-aws" style="color:#fdba74;" aria-hidden="true"></i>
             </div>
-            <p class="text-gray-400 text-sm">May 2026</p>
-            <div class="mt-3 inline-block px-3 py-1 bg-orange-400 bg-opacity-20 text-orange-300 text-xs font-semibold rounded-full">Cloud</div>
+            <div class="cert-issuer" style="color:#fdba74;">AWS Academy</div>
+            <div class="cert-name">AWS Academy Graduate — Cloud Foundations</div>
+            <div class="cert-date">May 2026</div>
+            <span class="cert-tag" style="background:rgba(253,186,116,0.08);color:#fdba74;border:1px solid rgba(253,186,116,0.2);">Cloud</span>
           </div>
 
           <!-- Python NTI -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-blue-400 transition-all hover:shadow-lg hover:shadow-blue-400/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-blue-400 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fab fa-python text-blue-400 text-2xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">NTI</span>
-                <h4 class="font-bold text-white">Python for Data Analysis</h4>
-              </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(56,189,248,0.08);">
+              <i class="fab fa-python" style="color:#60a5fa;" aria-hidden="true"></i>
             </div>
-            <p class="text-gray-400 text-sm">Mar 2026</p>
-            <div class="mt-3 inline-block px-3 py-1 bg-blue-400 bg-opacity-20 text-blue-400 text-xs font-semibold rounded-full">Data Analysis</div>
+            <div class="cert-issuer" style="color:#60a5fa;">NTI</div>
+            <div class="cert-name">Python for Data Analysis</div>
+            <div class="cert-date">Mar 2026</div>
+            <span class="cert-tag" style="background:rgba(96,165,250,0.08);color:#60a5fa;border:1px solid rgba(96,165,250,0.2);">Data Analysis</span>
           </div>
 
           <!-- .NET Coursera -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-purple-500 transition-all hover:shadow-lg hover:shadow-purple-500/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-purple-500 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fas fa-graduation-cap text-purple-400 text-2xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">Coursera</span>
-                <h4 class="font-bold text-white">Backend Development – .NET Full Stack</h4>
-              </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(129,140,248,0.10);">
+              <i class="fas fa-graduation-cap" style="color:#818cf8;" aria-hidden="true"></i>
             </div>
-            <p class="text-gray-400 text-sm">Sep 2023</p>
-            <div class="mt-3 inline-block px-3 py-1 bg-purple-500 bg-opacity-20 text-purple-400 text-xs font-semibold rounded-full">.NET</div>
+            <div class="cert-issuer" style="color:#818cf8;">Coursera</div>
+            <div class="cert-name">Backend Development — .NET Full Stack</div>
+            <div class="cert-date">Sep 2023</div>
+            <span class="cert-tag" style="background:rgba(129,140,248,0.08);color:#818cf8;border:1px solid rgba(129,140,248,0.2);">.NET</span>
           </div>
 
         </div>
 
-        <!-- Internships Grid -->
-        <h3 class="text-2xl font-bold mb-8 text-center">🎓 Professional Internships</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Internships -->
+        <h3 class="about-subsection-title reveal" style="margin-top:56px;margin-bottom:24px;">Professional Training &amp; Internships</h3>
+        <div class="internship-grid reveal-stagger">
 
           <!-- DEPI -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-indigo-500 transition-all hover:shadow-lg hover:shadow-indigo-500/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-indigo-500 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fas fa-network-wired text-indigo-400 text-2xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">DEPI</span>
-                <h4 class="font-bold text-white">Data Engineering Track</h4>
-              </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(129,140,248,0.10);">
+              <i class="fas fa-network-wired" style="color:#818cf8;" aria-hidden="true"></i>
             </div>
-            <p class="text-gray-400 text-sm">Jan 2026 – Jun 2026</p>
-            <p class="text-gray-300 text-sm mt-2">Hands-on training in Big Data pipelines, distributed systems, and data warehouse design.</p>
+            <div class="cert-issuer" style="color:#818cf8;">DEPI</div>
+            <div class="cert-name">Data Engineering Track</div>
+            <div class="cert-date">Jan 2026 – Jun 2026</div>
+            <p style="font-size:0.8125rem;color:var(--text-secondary);margin-top:10px;line-height:1.55;">
+              Hands-on training in Big Data pipelines, distributed systems, and data warehouse design.
+            </p>
           </div>
 
           <!-- Skarpt -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-pink-500 transition-all hover:shadow-lg hover:shadow-pink-500/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-pink-500 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fas fa-eye text-pink-400 text-2xl"></i>
-              </div>
-              <div>
-                <span class="text-xs font-semibold text-pink-400 uppercase tracking-wider">Skärpt</span>
-                <h4 class="font-bold text-white">AI Engineer – Computer Vision</h4>
-              </div>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(244,114,182,0.10);">
+              <i class="fas fa-eye" style="color:#f472b6;" aria-hidden="true"></i>
             </div>
-            <p class="text-gray-400 text-sm">Feb 2025 – May 2025 · R&amp;D</p>
-            <p class="text-gray-300 text-sm mt-2">Developed computer-vision models achieving 90% accuracy in PPE detection for safety compliance.</p>
+            <div class="cert-issuer" style="color:#f472b6;">Skärpt</div>
+            <div class="cert-name">AI Engineer — Computer Vision</div>
+            <div class="cert-date">Feb 2025 – May 2025 · R&amp;D</div>
+            <p style="font-size:0.8125rem;color:var(--text-secondary);margin-top:10px;line-height:1.55;">
+              Developed computer-vision models achieving 90% accuracy in PPE detection for workplace safety compliance.
+            </p>
           </div>
 
           <!-- Hospital 57357 -->
-          <div class="cert-card bg-gray-800 bg-opacity-60 rounded-2xl border border-gray-700 p-6 hover:border-green-500 transition-all hover:shadow-lg hover:shadow-green-500/20 group">
-            <div class="flex items-center mb-4">
-              <div class="w-12 h-12 rounded-xl bg-green-500 bg-opacity-20 flex items-center justify-center mr-4 group-hover:bg-opacity-40 transition-all">
-                <i class="fas fa-hospital text-green-400 text-2xl"></i>
+          <div class="cert-card">
+            <div class="cert-icon-wrap" style="background:rgba(74,222,128,0.10);">
+              <i class="fas fa-hospital" style="color:#4ade80;" aria-hidden="true"></i>
+            </div>
+            <div class="cert-issuer" style="color:#4ade80;">Hospital 57357</div>
+            <div class="cert-name">Hospital Information Systems (HIS)</div>
+            <div class="cert-date">Jul 2023</div>
+            <p style="font-size:0.8125rem;color:var(--text-secondary);margin-top:10px;line-height:1.55;">
+              Trained on Hospital Information Systems and healthcare data management workflows.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CONTACT
+    ═══════════════════════════════════════════════════════ -->
+    <section id="contact" class="bg-alt">
+      <div class="container">
+
+        <header class="section-header reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-heading">Let's Work Together</h2>
+          <span class="divider-line" aria-hidden="true"></span>
+          <p class="section-sub">
+            Have a data engineering challenge or an opportunity to discuss?
+            I'd be glad to connect.
+          </p>
+        </header>
+
+        <div class="contact-wrap reveal">
+
+          <!-- Contact info card -->
+          <div class="contact-card">
+            <h3 style="font-size:1.125rem;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Contact Information</h3>
+            <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:8px;">Giza, Egypt</p>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <i class="fas fa-envelope"></i>
               </div>
               <div>
-                <span class="text-xs font-semibold text-green-400 uppercase tracking-wider">Hospital 57357</span>
-                <h4 class="font-bold text-white">Hospital Information Systems (HIS)</h4>
+                <p class="contact-label">Email</p>
+                <a href="mailto:ahmedhassansaad7@gmail.com" class="contact-value" id="contact-email">
+                  ahmedhassansaad7@gmail.com
+                </a>
               </div>
             </div>
-            <p class="text-gray-400 text-sm">Jul 2023</p>
-            <p class="text-gray-300 text-sm mt-2">Trained on Hospital Information Systems and healthcare data management workflows.</p>
-          </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- Work Section -->
-    <section id="work" class="py-20 bg-gray-900 bg-opacity-70">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            <span class="gradient-text">Featured Work</span>
-          </h2>
-          <div
-            class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-6"
-          ></div>
-          <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-            A selection of data engineering and analytics projects showcasing
-            pipeline design, data modeling, and end-to-end workflow automation.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Project 1 -->
-          <div
-            class="project-card bg-gray-800 bg-opacity-50 rounded-xl overflow-hidden border border-gray-700 relative"
-          >
-            <div class="relative overflow-hidden h-60 bg-gray-700">
-              <img
-                src="assets/SSIS-FactSales.png"
-                alt="Sales Data Warehouse"
-                class="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"
-              ></div>
-              <div class="absolute bottom-0 left-0 p-6">
-                <span
-                  class="inline-block px-3 py-1 text-xs font-semibold bg-purple-600 rounded-full mb-2"
-                  >SSIS-SSAS-BI</span
-                >
-                <h3 class="text-xl font-bold">ETL - Sales Data Warehouse</h3>
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <p class="contact-label">Phone</p>
+                <a href="tel:+201022624475" class="contact-value" id="contact-phone">
+                  +20 102 262 4475
+                </a>
               </div>
             </div>
-            <div class="p-6">
-              <p class="text-gray-300 mb-4">
-                Built an end-to-end ELT pipeline using SSIS and SQL Server to
-                populate a Star Schema DW; developed SSAS cubes and Power BI
-                dashboards to analyze sales trends, customer segmentation, and
-                geographic demand.
-              </p>
-              <a
-                href="https://github.com/Ahmed-Hassan111/DWH_Project.git"
-                target="_blank"
-                class="inline-flex items-center text-purple-400 hover:text-purple-300 font-medium"
-              >
-                View on GitHub
-                <i class="fas fa-arrow-right ml-2"></i>
+
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <p class="contact-label">Location</p>
+                <span class="contact-value">Giza, Egypt</span>
+              </div>
+            </div>
+
+            <p class="contact-socials-heading">Connect on</p>
+            <div class="social-row">
+              <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer"
+                 class="social-btn" id="contact-github" aria-label="GitHub profile">
+                <i class="fab fa-github" aria-hidden="true"></i>
+                GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/ahmed-hassan-dataeng/" target="_blank" rel="noopener noreferrer"
+                 class="social-btn" id="contact-linkedin" aria-label="LinkedIn profile">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                LinkedIn
               </a>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div
-            class="project-card bg-gray-800 bg-opacity-50 rounded-xl overflow-hidden border border-gray-700 relative"
-          >
-            <div class="relative overflow-hidden h-60 bg-gray-700">
-              <img
-                src="assets/ARCHITECTURE DIAGRAM.png"
-                alt="Data Pipeline Architecture"
-                class="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"
-              ></div>
-              <div class="absolute bottom-0 left-0 p-6">
-                <span
-                  class="inline-block px-3 py-1 text-xs font-semibold bg-indigo-600 rounded-full mb-2"
-                  >s3-snowflake-dbt-bi</span
-                >
-                <h3 class="text-xl font-bold">
-                  Netflix End-to-End Data Pipeline
-                </h3>
-              </div>
+          <!-- Availability card -->
+          <div class="availability-card">
+            <div class="availability-status">
+              <span class="avail-dot" aria-hidden="true"></span>
+              Available for new opportunities
             </div>
-            <div class="p-6">
-              <p class="text-gray-300 mb-4">
-                From raw CSV files to a Power BI dashboard — built with a modern
-                data stack - AWS, Snowflake, Databricks, Power bi.
-              </p>
-              <a
-                href="https://github.com/Ahmed-Hassan111/movielens-end-to-end-project.git"
-                target="_blank"
-                class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium"
-              >
-                View on GitHub
-                <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div
-            class="project-card bg-gray-800 bg-opacity-50 rounded-xl overflow-hidden border border-gray-700 relative"
-          >
-            <div class="relative overflow-hidden h-60 bg-gray-700">
-              <img
-                src="assets/Diagram.png"
-                alt="Database project"
-                class="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"
-              ></div>
-              <div class="absolute bottom-0 left-0 p-6">
-                <span
-                  class="inline-block px-3 py-1 text-xs font-semibold bg-pink-600 rounded-full mb-2"
-                  >Database-SSMS</span
-                >
-                <h3 class="text-xl font-bold">Database Project</h3>
-              </div>
-            </div>
-            <div class="p-6">
-              <p class="text-gray-300 mb-4">
-                Designed a normalized relational database schema for an academic
-                examination system, including stored procedures, indexing
-                strategies, and query optimization for 10,000+ student records.
-              </p>
-              <a
-                href="https://github.com/Ahmed-Hassan111/DataBaseProject-ITI.git"
-                target="_blank"
-                class="inline-flex items-center text-pink-400 hover:text-pink-300 font-medium"
-              >
-                View on GitHub
-                <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-          <!-- Project 4 -->
-          <div
-            class="project-card bg-gray-800 bg-opacity-50 rounded-xl overflow-hidden border border-gray-700 relative"
-          >
-            <div class="relative overflow-hidden h-60 bg-gray-700">
-              <img
-                src="assets/Figure_5.png"
-                alt="Data Analysis Pipeline"
-                class="w-full h-full object-contain transition-transform duration-500 hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"
-              ></div>
-              <div class="absolute bottom-0 left-0 p-6">
-                <span
-                  class="inline-block px-3 py-1 text-xs font-semibold bg-green-600 rounded-full mb-2"
-                  >Pandas-Seaborn-Matplotlib</span
-                >
-                <h3 class="text-xl font-bold">Data Analysis with python</h3>
-              </div>
-            </div>
-            <div class="p-6">
-              <p class="text-gray-300 mb-4">
-                Built an end-to-end data analysis pipeline using Python and
-                Pandas — covering data ingestion, cleaning, transformation, and
-                visualization with Matplotlib library.
-              </p>
-              <a
-                href="https://github.com/Ahmed-Hassan111/users-data-analysis-project-ITI.git"
-                target="_blank"
-                class="inline-flex items-center text-green-400 hover:text-green-300 font-medium"
-              >
-                View on GitHub
-                <i class="fas fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-12">
-          <a
-            href="https://github.com/Ahmed-Hassan111/users-data-analysis-project-ITI.git"
-            class="inline-flex items-center px-6 py-3 border border-gray-600 rounded-full text-white font-medium hover:bg-gray-800 transition-all transform hover:scale-105"
-          >
-            View All Projects
-            <i class="fas fa-arrow-right ml-2"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900 bg-opacity-70">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">
-            <span class="gradient-text">Let's Work Together</span>
-          </h2>
-          <div
-            class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-6"
-          ></div>
-          <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-            Have a data engineering challenge or project in mind? Get in touch
-            and let's build scalable data solutions together.
-          </p>
-        </div>
-
-        <div class="flex flex-col items-center justify-center">
-          <div class="max-w-xl w-full">
-            <div
-              class="bg-gray-800 bg-opacity-50 p-8 rounded-xl border border-gray-700 h-full"
-            >
-              <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-
-              <div class="space-y-6">
-                <div class="flex items-start">
-                  <div
-                    class="flex-shrink-0 bg-indigo-500 bg-opacity-20 p-3 rounded-lg mr-4"
-                  >
-                    <i class="fas fa-envelope text-indigo-400 text-xl"></i>
-                  </div>
-                  <!-- Email -->
-                  <div>
-                    <h4 class="font-bold mb-1">Email</h4>
-                    <a
-                      href="mailto:ahmedhassansaad7@gmail.com"
-                      class="text-gray-300 hover:underline"
-                    >
-                      ahmedhassansaad7@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <div class="flex items-start">
-                  <div
-                    class="flex-shrink-0 bg-purple-500 bg-opacity-20 p-3 rounded-lg mr-4"
-                  >
-                    <i class="fas fa-phone-alt text-purple-400 text-xl"></i>
-                  </div>
-                  <!-- Phone -->
-                  <div>
-                    <h4 class="font-bold mb-1">Phone</h4>
-                    <a
-                      href="tel:+201022624475"
-                      class="text-gray-300 hover:underline"
-                    >
-                      +201022624475
-                    </a>
-                  </div>
-                </div>
-
-                <div class="flex items-start">
-                  <div
-                    class="flex-shrink-0 bg-pink-500 bg-opacity-20 p-3 rounded-lg mr-4"
-                  >
-                    <i class="fas fa-map-marker-alt text-pink-400 text-xl"></i>
-                  </div>
-                  <div>
-                    <h4 class="font-bold mb-1">Location</h4>
-                    <p class="text-gray-300">Giza, Egypt</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-10">
-                <h4 class="font-bold mb-4">Follow Me</h4>
-                <div class="flex space-x-4">
-                  <a
-                    href="https://github.com/Ahmed-Hassan111"
-                    target="_blank"
-                    class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-indigo-500 hover:text-white transition-all"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/ahmed-hassan-dataeng/"
-                    target="_blank"
-                    class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-gray-300 hover:bg-blue-500 hover:text-white transition-all"
-                  >
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 bg-gray-900 border-t border-gray-800">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="mb-6 md:mb-0">
-            <span class="text-xl font-bold gradient-text">DATA ENGINEER</span>
-            <p class="text-gray-400 mt-2">
-              Turning raw data into decisions that matter.
+            <h3 class="availability-heading">
+              Open to data engineering roles and consulting projects
+            </h3>
+            <p class="availability-desc">
+              I'm interested in full-time data engineering positions, contract work on
+              data platform projects, and collaborations involving real-time pipelines,
+              lakehouse architecture, or analytics infrastructure.
             </p>
+            <a href="mailto:ahmedhassansaad7@gmail.com" class="btn-primary" id="contact-cta-email"
+               style="display:inline-flex;margin-top:4px;">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              Send Me an Email
+            </a>
           </div>
 
-          <div class="flex flex-col items-center md:items-end">
-            <div class="flex space-x-6 mb-4">
-              <a
-                href="https://github.com/Ahmed-Hassan111"
-                target="_blank"
-                class="text-gray-400 hover:text-white transition-colors"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ahmed-hassan-dataeng/"
-                target="_blank"
-                class="text-gray-400 hover:text-white transition-colors"
-              >
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
-            <p class="text-gray-500 text-sm">
-              © 2026 Ahmed Hassan | Data Engineer. All rights reserved.
-            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════════ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            <span class="footer-brand gradient-text">AHMED HASSAN</span>
+            <p class="footer-copy" style="margin-top:4px;">Data Engineer · Giza, Egypt</p>
+          </div>
+
+          <p class="footer-copy">© 2026 Ahmed Hassan. All rights reserved.</p>
+
+          <div class="footer-links">
+            <a href="https://github.com/Ahmed-Hassan111" target="_blank" rel="noopener noreferrer"
+               class="footer-link" aria-label="GitHub profile">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ahmed-hassan-dataeng/" target="_blank" rel="noopener noreferrer"
+               class="footer-link" aria-label="LinkedIn profile">
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:ahmedhassansaad7@gmail.com"
+               class="footer-link" aria-label="Send email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
     </footer>
-    <!-- Your custom JS -->
+
     <script src="script.js"></script>
   </body>
 </html>
