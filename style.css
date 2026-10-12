@@ -152,3 +152,18 @@ body {
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 20px 20px;
 }
+
+.cert-card {
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+}
+
+.img-right {
+  max-height: 420px;
+  object-fit: cover;
+  width: 100%;
+}
+
