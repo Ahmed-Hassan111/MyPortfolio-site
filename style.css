@@ -534,6 +534,11 @@ body::before {
   object-fit: cover;
   object-position: top center;
   display: block;
+  transition: transform var(--transition);
+}
+
+.hero-image-card:hover img {
+  transform: scale(1.03);
 }
 
 .hero-image-ring {
@@ -686,6 +691,11 @@ section.bg-alt {
   object-fit: cover;
   object-position: top center;
   display: block;
+  transition: transform var(--transition);
+}
+
+.about-portrait-frame:hover img {
+  transform: scale(1.03);
 }
 
 .about-stats {
