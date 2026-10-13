@@ -559,28 +559,29 @@
       <div class="projects-grid reveal-stagger">
 
         <!-- Project 1: Football Analytics (ITI Graduation Project) -->
-        <article class="project-card" aria-label="Football Analytics Live and Batch Match Intelligence project">
+        <article class="project-card" aria-label="Football Analytics Live Match Intelligence Graduation Project">
           <div class="project-image">
             <img src="assets/Football_Project.png"
               alt="Architecture diagram and analytics dashboards for the Football Analytics live and batch platform" />
             <div class="project-image-overlay" aria-hidden="true"></div>
             <div class="project-tech-row" aria-label="Technologies used">
-              <span class="project-tech-pill">Snowflake</span>
+              <span class="project-tech-pill">AWS S3</span>
               <span class="project-tech-pill">Apache Spark</span>
               <span class="project-tech-pill">Apache Kafka</span>
-              <span class="project-tech-pill">AWS S3</span>
+              <span class="project-tech-pill">Snowflake</span>
               <span class="project-tech-pill">dbt</span>
               <span class="project-tech-pill">Airflow</span>
+              <span class="project-tech-pill">Grafana</span>
               <span class="project-tech-pill">Power BI</span>
             </div>
           </div>
           <div class="project-body">
-            <p class="project-objective">ITI Graduation Project · Dual Batch &amp; Streaming Platform</p>
-            <h3 class="project-title">Football Analytics — Live &amp; Batch Match Intelligence</h3>
+            <p class="project-objective">ITI Graduation Project · Lambda + Medallion Architecture</p>
+            <h3 class="project-title">Football Analytics &amp; Live Match Intelligence</h3>
             <p class="project-desc">
-              <strong>Objective:</strong> Build a dual batch &amp; streaming platform processing 1.8M+ football records across 150K+ matches for analytics and live simulation.<br><br>
-              <strong>Approach:</strong> PySpark cleans raw S3 data; Snowflake + dbt build a Galaxy Schema orchestrated by Airflow. Simultaneously, Kafka streams events into Spark, InfluxDB, and Grafana.<br><br>
-              <strong>Outcome:</strong> Delivered 3 Power BI dashboards and real-time Grafana match monitoring with automated data tests and sub-second stream latency.
+              <strong>Objective:</strong> Build an end-to-end Lambda + Medallion pipeline ingesting 3M+ football records from Transfermarkt, delivering both historical analytics and live match simulation.<br><br>
+              <strong>Approach:</strong> Ingested raw data into AWS S3 via a Medallion architecture; modeled into a <strong>Galaxy Schema</strong> using dbt in Snowflake for analytics-ready reporting. Added a <strong>Kafka + Spark Structured Streaming</strong> layer to simulate live match events, orchestrated with Airflow.<br><br>
+              <strong>Outcome:</strong> Visualized results via real-time <strong>Grafana</strong> dashboards for live event monitoring and <strong>Power BI</strong> dashboards for historical business insights.
             </p>
             <div class="project-footer">
               <a href="https://github.com/Ahmed-Hassan111/Football-Analytics-Live-Batch-Match-Intelligence.git" target="_blank"
@@ -594,36 +595,32 @@
           </div>
         </article>
 
-        <!-- Project 2: Netflix Data Pipeline -->
-        <article class="project-card" aria-label="Netflix End-to-End Data Pipeline project">
+        <!-- Project 2: Movielens End-To-End Data Pipeline -->
+        <article class="project-card" aria-label="Movielens End-To-End Data Pipeline project">
           <div class="project-image">
             <img src="assets/ARCHITECTURE DIAGRAM.png"
-              alt="Architecture diagram showing the Netflix end-to-end data pipeline on AWS, Snowflake, and Databricks" />
+              alt="Architecture diagram showing the Movielens end-to-end ELT pipeline on AWS S3, Snowflake, and Airflow" />
             <div class="project-image-overlay" aria-hidden="true"></div>
             <div class="project-tech-row" aria-label="Technologies used">
               <span class="project-tech-pill">AWS S3</span>
               <span class="project-tech-pill">Snowflake</span>
-              <span class="project-tech-pill">Databricks</span>
               <span class="project-tech-pill">dbt</span>
+              <span class="project-tech-pill">Apache Airflow</span>
               <span class="project-tech-pill">Power BI</span>
             </div>
           </div>
           <div class="project-body">
-            <p class="project-objective">Modern Data Stack Pipeline</p>
-            <h3 class="project-title">Netflix End-to-End Data Pipeline</h3>
+            <p class="project-objective">ELT Pipeline · Bronze-Silver-Gold Medallion Architecture</p>
+            <h3 class="project-title">Movielens End-To-End Data Pipeline</h3>
             <p class="project-desc">
-              <strong>Objective:</strong> Process raw CSV movie/ratings data through a
-              full modern data stack into an analytical Power BI dashboard.<br><br>
-              <strong>Approach:</strong> Raw files land in AWS S3, are loaded into
-              Snowflake via a Databricks notebook, transformed and modeled with dbt
-              (fact/dimension tables), and surfaced through Power BI for reporting.<br><br>
-              <strong>Outcome:</strong> Demonstrates a complete cloud-native ELT workflow
-              from raw ingestion to business-ready analytics.
+              <strong>Objective:</strong> Build an end-to-end ELT pipeline on the MovieLens dataset (20M+ ratings, tags, and genome scores) into an analytics-ready data warehouse.<br><br>
+              <strong>Approach:</strong> Followed a <strong>Bronze-Silver-Gold Medallion Architecture</strong> and modeled a <strong>Star Schema</strong> with dbt, from AWS S3 into Snowflake. Orchestrated the daily workflow with an <strong>Apache Airflow DAG</strong>.<br><br>
+              <strong>Outcome:</strong> Delivered a <strong>Power BI dashboard</strong> surfacing business insights across ratings trends, tag analysis, and genome score distributions.
             </p>
             <div class="project-footer">
               <a href="https://github.com/Ahmed-Hassan111/movielens-end-to-end-project.git" target="_blank"
-                rel="noopener noreferrer" class="project-link" id="proj-netflix-github"
-                aria-label="View Netflix pipeline on GitHub">
+                rel="noopener noreferrer" class="project-link" id="proj-movielens-github"
+                aria-label="View Movielens Pipeline on GitHub">
                 <i class="fab fa-github" aria-hidden="true"></i>
                 View on GitHub
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -632,11 +629,11 @@
           </div>
         </article>
 
-        <!-- Project 3: Sales Data Warehouse -->
-        <article class="project-card" aria-label="ETL Sales Data Warehouse project">
+        <!-- Project 3: Bookstore ETL Data Warehouse -->
+        <article class="project-card" aria-label="Bookstore ETL Data Warehouse Project">
           <div class="project-image">
             <img src="assets/SSIS-FactSales.png"
-              alt="SSIS data flow diagram for the Sales Data Warehouse ETL pipeline" />
+              alt="SSIS data flow diagram for the Bookstore ETL Data Warehouse pipeline" />
             <div class="project-image-overlay" aria-hidden="true"></div>
             <div class="project-tech-row" aria-label="Technologies used">
               <span class="project-tech-pill">SSIS</span>
@@ -646,20 +643,16 @@
             </div>
           </div>
           <div class="project-body">
-            <p class="project-objective">Enterprise Data Warehouse</p>
-            <h3 class="project-title">ETL — Sales Data Warehouse</h3>
+            <p class="project-objective">ELT Data Warehouse · Star Schema</p>
+            <h3 class="project-title">Bookstore ETL Data Warehouse Project</h3>
             <p class="project-desc">
-              <strong>Objective:</strong> Build an enterprise-grade data warehouse to
-              support sales analytics, customer segmentation, and geographic demand reporting.<br><br>
-              <strong>Approach:</strong> Designed a Star Schema DW populated via SSIS
-              ETL pipelines from operational sources, with SSAS cubes for multidimensional
-              analysis and Power BI dashboards for business reporting.<br><br>
-              <strong>Outcome:</strong> A complete BI stack from raw transactional data
-              to interactive dashboards.
+              <strong>Objective:</strong> Build an end-to-end ELT pipeline and enterprise data warehouse for a bookstore to analyze sales trends, customer segmentation, and geographic demand.<br><br>
+              <strong>Approach:</strong> Used <strong>SSIS</strong> and <strong>SQL Server</strong> to populate a <strong>Star Schema</strong> data warehouse from operational sources. Developed <strong>SSAS cubes</strong> for multidimensional analysis and Power BI dashboards for business reporting.<br><br>
+              <strong>Outcome:</strong> A complete BI stack delivering actionable insights on sales trends, customer segments, and regional demand patterns.
             </p>
             <div class="project-footer">
               <a href="https://github.com/Ahmed-Hassan111/DWH_Project.git" target="_blank" rel="noopener noreferrer"
-                class="project-link" id="proj-dwh-github" aria-label="View Sales DWH on GitHub">
+                class="project-link" id="proj-dwh-github" aria-label="View Bookstore ETL DWH on GitHub">
                 <i class="fab fa-github" aria-hidden="true"></i>
                 View on GitHub
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -668,7 +661,7 @@
           </div>
         </article>
 
-        <!-- Project 4: Examination DB -->
+        <!-- Project 4: Examination System Database -->
         <article class="project-card" aria-label="Examination System Database project">
           <div class="project-image">
             <img src="assets/Diagram.png" alt="Entity-Relationship diagram for the examination system database" />
@@ -677,24 +670,21 @@
               <span class="project-tech-pill">SQL Server</span>
               <span class="project-tech-pill">SSMS</span>
               <span class="project-tech-pill">Stored Procedures</span>
+              <span class="project-tech-pill">Indexing</span>
             </div>
           </div>
           <div class="project-body">
-            <p class="project-objective">Database Design</p>
+            <p class="project-objective">Relational Database Design · Query Optimization</p>
             <h3 class="project-title">Examination System Database</h3>
             <p class="project-desc">
-              <strong>Objective:</strong> Design a normalized relational database for an
-              academic examination platform handling large volumes of student records.<br><br>
-              <strong>Approach:</strong> Applied normalization principles, implemented
-              stored procedures for business logic, and applied indexing strategies
-              to optimize query performance for 10,000+ student records.<br><br>
-              <strong>Outcome:</strong> A maintainable, performant schema supporting
-              complex query patterns for exam management workflows.
+              <strong>Objective:</strong> Design a normalized relational database schema for an academic examination system capable of handling large-scale student records.<br><br>
+              <strong>Approach:</strong> Designed a fully <strong>normalized relational schema</strong>, implemented <strong>stored procedures</strong> for core business logic, and applied <strong>indexing strategies</strong> and query optimization techniques.<br><br>
+              <strong>Outcome:</strong> A maintainable, high-performance database supporting complex query patterns for exam management across <strong>10,000+ student records</strong>.
             </p>
             <div class="project-footer">
               <a href="https://github.com/Ahmed-Hassan111/DataBaseProject-ITI.git" target="_blank"
                 rel="noopener noreferrer" class="project-link" id="proj-db-github"
-                aria-label="View Database Project on GitHub">
+                aria-label="View Examination System Database on GitHub">
                 <i class="fab fa-github" aria-hidden="true"></i>
                 View on GitHub
                 <i class="fas fa-arrow-right" aria-hidden="true"></i>
